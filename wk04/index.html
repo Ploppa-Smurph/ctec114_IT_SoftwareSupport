@@ -10,35 +10,180 @@
     <h1>CTEC-114 wk04 Chapter 04 OS Basics</h1>
 <pre>
     <h2>4.1 Operating Systems</h2>
+    Graphical user interface(GUI)-	A software program that uses icons, menus, and other visual components to interact with and control a computer's or electric device's resources.
+    End of life-    The term vendors use to notify users that support, updates, and patches for an operating system or software will no longer be provided by the vendor.
+    Operating system kernel-	The most basic component of an operating system. The kernel runs the CPU, memory, and peripheral devices.
     <h3>4.1.1 Workstation OS</h3>
+        software that allows you to use computers memory, file system, processes, hardware, software, applications
+            normally uses GUI (graphic user interface)
+        Windows - started in 1985, home, pro additional features, enterprise edition
+        macOS - 2001 macOS started
+        Linux - open source UNIX like system -- free distributions first released in 1991
+           Kernel - runs, CPU, memory, and peripheral
+        Chrome OS - simplified cloud base usage       
     <h3>4.1.2 Workstation OS Facts</h3>
-
     <h2>4.2 Windows Basics</h2>
+    Operating system(OS)-	A set of programs that manages system functions, the applications that are running on a computer and the computer's hardware.
+    Kernel-	The core of the operating system that is loaded into memory when the system boots.
+    Driver-	A type of computer program that enables the operating system to interact with hardware devices.
+    Interface-	A type of computer program that allows the user to interact with the kernel and the utilities.
+    Utilities-	The features or programs included with an operating system that perform system-related tasks.
+    Application-	A subclass computer program that is designed for end users.
     <h3>4.2.1 Windows OS</h3>
+        communicates between hardware and applications --
+         OS moderates hardware -- allows apps to acces the hardware without doing a lot of work
+        provides Security - database of users accounts and login passwords
+
+        1st) Kernel - performs most of the jobs, manages file system, security
+        2nd) Utilities - part of the OS, interacts with Kernel
+        3rd) Interface - a. CLI - command line -
+                         b. GUI - graphical user interface - 
     <h3>4.2.2 Windows OS Facts</h3>
+    An operating system is a set of programs that act as an interface between the applications that are running on a computer and the computer's hardware. Operating systems perform actions such as:
+
+        -Receive user input from devices such as the keyboard or mouse.
+        -Send user output to devices such as the monitor or a printer.
+        -Control processing devices by applications.
+        -Serve as a platform for applications.
+        -Moderate hardware.
+        -Provide security.
+        -Manage the file system.
+    
+    Some operating systems also have following attributes.
+    
+        -Multiprocessing—the ability to use multiple central processing units (CPUs) in a single system.
+        -Multitasking—the ability to run multiple applications simultaneously. Two common variations are:
+            -Cooperative multitasking—requires multiple processes to work together for the operating system to work effectively.
+            -Preemptive multitasking—forces applications to share the CPU.
+        -Multithreading—the ability to run multiple parts of an application simultaneously.
     <h3>4.2.3 Windows 10</h3>
+            Home- most basic features
+            Pro- comes with remote desktop, hyper-v, group policy management, bitlocker, active directory
+            Pro for Workstations- doubles CPU to 4 CPU capacity, supports INTEL Xeon, AMD Opteron and Persistant Memory (Medical, Science)
+            Enterprise Edition - Credential Protection
     <h3>4.2.4 Windows 11</h3>
+            Home- parental control, find device, redocking memory, device encryption (only 64bit version) 
+            Pro- Bitlocker, hyper-v, dynamic provisioning, group policy management
+            Pro for Workstations- powerful machines, researchers, cad, design, persistant memory, ReFS (Resilient File System)
+            Enterprise Edition- licensing agreement, IT management in mind, Applocker, credential guard  
     <h3>4.2.5 Windows Edition Facts</h3>
     <h3>4.2.6 Windows Features</h3>
+            Domain Accounts vs Workgroups.
+               RAM - home - 128GB
+                     Pro  - 2TB
+                     Pro Workstations & Enterprise - 6TB
+        gpedit.msc (Group Policy Editor)             
     <h3>4.2.7 Windows Features Facts</h3>
     <h3>4.2.8 Use the Windows 10 Interface</h3>
     <h3>4.2.9 Use the Windows 11 Interface</h3>
     <h3>4.2.10 Windows Interface Facts</h3>
+    Features New to Windows 11
+
+    Changes to the Windows OS offered with Windows 11 include:
+        -A cleaner user interface with updated design.
+        -Snap layouts that let you select layouts, grouping, and organization options for working with multiple pages on the screen simultaneously. Layout/grouping options vary depending on screen size. To use snap layouts:
+        -Hover over the minimize icon to select the layout.
+        -Hover over the desktop icon on taskbar to navigate between layouts.
+        -The redesigned Microsoft Store which offers Windows 11 and Windows 10 apps, as well as Android apps hosted on the Amazon App Store.
+        -Teams (replaces the Skype options) to offer chat and video calls with contacts.
+        -Larger touch targets and visual prompts for tablet users.
+        -Virtual desktops for organizing applications by topic or work environment.
+        -Auto high dynamic range (HDR) which expands the range of colors in many DirectX games and other newer games.
+        -Faster Windows Hello logon.
+        -Faster download time for Windows updates.
     <h3>4.2.11 Windows Upgrade</h3>
     <h3>4.2.12 Windows Upgrade Facts</h3>
+    Windows 11 minimum hardware requirements are:
 
-
+        -1 GHz or faster processor with at least two cores on a compatible 64-bit processor or SoC.
+        -4 GB RAM.
+        -64 GB storage.
+        -Unified Extensible Firmware Interface (UEFI), Secure Boot capable firmware.
+        -Trusted Platform Module (TPM) 2.0.
+        -DirectX 12 or later with Windows Display Driver Model (WDDM) 2.0 driver graphic card720p, 8-bit per color channel, 9-inch diagonal or greater display.
     <h2>4.3 Linux Basics</h2>
+        Linux-	An open-source operating system.
+        Distribution-	A custom version of Linux.
+        Shell-	A command line interface.
     <h3>4.3.1 Linux OS</h3>
     <h3>4.3.2 Navigate Linux GUI</h3>
     <h3>4.3.3 Linux Facts</h3>
-
+    Application platform-	The operating system provides a platform that applications can run on.
+    Hardware interface-	A key function of the operating system is to ensure that an application running on the system does not try to use an area in memory that's already in use by another application. The OS is also responsible for ensuring that an application running on the system does not monopolize the CPU, preventing other running applications on the system from using the CPU.
+    Data storage-	The operating system is responsible for providing an efficient and reliable means for storing data. This is usually done using some type of storage device, such as a hard disk drive formatted with a particular file system. The file system's job is to organize the information on the hard disk in an easily retrievable format.
+    Security-	The operating system is responsible for providing some degree of security for the data that's stored on its storage devices. For example, the system administrator can create rules and assign permissions that determine who can access what information on the system.
+    Network connectivity-	The operating system provides connectivity between computer systems over a network connection. They do this using a variety of network media and interfaces, such as an Ethernet connection between computer systems. There are other standards that can create network connections, such as mobile broadband wireless or Wi-Fi wireless.
     <h2>4.4 macOS Basics</h2>
+    MacOS-	A proprietary closed-source, operating system designed by Apple, Inc.
+    Apple File System (APFS)-	The default file system for Mac computers using macOS 10.13 or later.
     <h3>4.4.1 macOS Intro</h3>
+        started in 1984 for macintosh computers - only operates with specific components
+
+        Keyboard - command+c = copy
+                    function keys - must hold down fn for the alternate feature
+        
+        File System - APFS 
+            File Types -- .app files (unix directory with all the files)
+            DMG - apple disk image -- contains all the files to install an app 
+              .pkg - package
+              
+        you simply drag the .app file into the applications directory 
+        
+        appstore 
+
+        Apple Business Manager - create managed apple ids for employees -- managing administration
+             id are owned by the orginazation, easy to implement, Federated Authentication
+        
+        update, patches, anti-virus -- patch management -      
     <h3>4.4.2 Installing and Uninstalling Apps</h3>
+        macOS has 'App Store' for official macOS apps
+               homebrew, 3rd party app downloads
     <h3>4.4.3 macOS Interface System Preferences</h3>
     <h3>4.4.4 macOS Features and Settings</h3>
     <h3>4.4.5 macOS Facts</h3>
+    Gestures:	Gestures are specific finger motions you can use to perform a specific function on a Mac OS system. You can use Gestures on Apple systems that have an Apple Multi-Touch trackpad, a Magic Mouse, or a touchscreen. Following are some of the gestures that are available on Mac OS.
+            -Right-click: Tap with two fingers to right-click.
+            -Smart zoom: Double-tap with two fingers to zoom in on a web page, image, or document. Double-tap again to zoom out.
+            -Scroll: Slide up or down using two fingers to scroll up or down.
+            -Zoom: Spread two fingers apart to zoom in. Bring fingers back together to zoom out.
+            -Page navigation: Slide two fingers left or right to navigate between pages in a document.
+            -Mission Control: Slide four fingers straight up to open Mission Control.
+            -All apps: Slide four fingers straight down to display all windows of the active app.
+    Remote Disc:	Because many modern Apple devices are manufactured without a CD or DVD player installed, Mac OS offers the Remote Disc feature. With Remote Disc:
+            -The CD or DVD can be shared on the network.
+            -Devices on the same network can access the shared remote CD or DVD.
+            -You can access only data CDs and DVDs. You can't remotely access media discs such as audio CDs; Blu-ray and DVD movies; or installation discs.
+    Boot Camp:	Boot Camp is a Mac OS feature that allows an Apple device to install the Microsoft Windows OS. The Boot Camp Assistant app makes installing Windows a simple process. The Boot Camp Assistant:
+            -Creates a BOOTCAMP partition on the hard drive and prepares it for installing Windows automatically.
+            -Reboots the system and starts the Windows install process from the selected installation media.
+            -Creates a Boot Camp system tray icon in both Mac OS and the Windows installation to switch between the Windows and Mac OS.
+        -Boot Camp has the following system requirements:
+            -Intel-based Mac
+            -Installation media containing 64-bit version of Windows 8 or later
+            -55 GB of free space
+    System Preferences:	You use the System Preferences utility to change most Mac OS settings.
+            -Settings are grouped by category. You access a category by selecting the category icon.
+            -Each category has multiple tabs or dialogs to change system settings.
+            -You can use the search box to search for the location of a specific setting.
+    Mission Control:	Mission Control is a desktop and application window management utility used to access several Mac OS features.
+            -Multiple Desktops: At the top of Mission Control is the Multiple Desktops feature you can use to manage and navigate between multiple desktops.
+            -All Windows: When activated, Mission Control tiles all application windows on the screen and groups multiple windows from the same application together.
+            -Dashboard: From Mission Control, you can access the Dashboard containing Mac OS widgets.
+    Keychain:	Keychain is Mac OS's password management utility. Keychain can hold password-protected data for the following categories:
+            -Passwords (including passwords for websites, system logins, wireless networks, and encrypted disks)
+            -Private keys
+            -Certificates
+            -Secure notes
+    Spotlight:	Spotlight is an indexing utility you can use to perform system-wide searches to locate folders, files, apps, and internet results that contain the specified search phrase. To access Spotlight, press Command (⌘)+ Spacebar, or select the Spotlight icon on the Status menu.
+    Dock:	The Dock is the main taskbar in Mac OS. You use the Dock to launch apps, switch between running apps, access the Trash, and access specific folders. You can:
+            -Access dock settings in System Preferences or by right-clicking the Dock and selecting Dock Preferences.
+            -Pin apps and folders to the Dock for quick access.
+            -Recognize running apps on the Dock by the illuminated dot below them.
+    Force Quit:	You use Force Quit to stop non-responsive processes and applications. You can also use it to restart the Finder service. You access Force Quit from the Apple menu or the keyboard shortcut Command + Option + Esc.
+    Terminal:	Terminal is Mac OS's command line interface utility. It is similar to the terminal used in Linux systems. Terminal:
+            -Uses many of the same commands as the Linux terminal.
+            -Can be used to perform system management tasks, such as deleting files, changing permissions, etc.
+            -Is an excellent troubleshooting tool.        
 </pre>    
     
 </body>
