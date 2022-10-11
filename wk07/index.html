@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-114 Chapter 07 System Management 01</title>
+</head>
+<body>
+<h1>CTEC-114 Chapter 07 System Management 01</h1>
+<pre>
+<h2>7.1 Windows System Tools</h2>
+Process-	An instance of a computer program that is being executed.
+Service-	A program that processes requests from other applications or users.
+Microsoft Management Console (MMC)-	A framework that provides a common user interface for performing system administration tasks.
+Windows Firewall-	A security application created by Microsoft and built into Windows.
+Computer Management-	A collection of Windows administrative tools, or snap-ins, that you can use to manage a computer.
+Microsoft Terminal Services Client-	 A remote management service that allows users to take control of remote computers over a network connection.
+Windows Update-  A Microsoft service for Windows that automates downloading and installing software updates over a network or the internet.
+Open Database Connectivity (ODBC)-	 The standard application programming interface for accessing database management systems (DBMS).
+<h3>7.1.1 Use Task Manager</h3>
+    ctrl-alt-del -> start task manager
+
+windows 11 - task manager starts in a 'low detail' view to 'end task'
+         can look for 'more details' to see the 'high detail' view
+
+    background process, performance, app history, startup, details, service
+<h3>7.1.2 Task Manger Facts</h3>
+To open Task Manager in Windows 10, use any of the following methods:
+
+    -Press Ctrl+Alt+Delete and select Task Manager
+    -Press Ctrl+Shift+Esc - Task manager opens
+    -Right-click an empty area of the task bar and select Task Manager
+    -Press Windows Key+X and then select Task Manager
+    -Press Windows Key+R (this opens the Run command). Type: taskmgr and click OK or press Enter.
+    -Click in the Search field and type: taskmgr, then press Enter; then select Task Manager from the results
+
+    Processes-	The Processes tab is used to view the status of all current applications running on the computer. Use this tab to terminate unresponsive applications. For each process running you can view the resources used by the process, such as CPU, Memory, and disk.
+    Performance-	The Performance tab is used to view system-wide processor, memory, disk, and network statistics. This is a more detailed view of what is also shown in the Processes tab.
+    App History-	The App History tab is used to collects statistics of how long an apps or program has been running on your computer for the past month.
+    Startup-	The Startup tab is used to enable or disable applications that start automatically when the system is powered on.
+    Users-	 The Users tab is used to monitor users currently logged on to the system. A selected user can be disconnected.
+    Details- 	The Details tab is used to view the status of all current processes running on the computer, and the CPU and memory resources they use. Use this tab to modify the priority of a process or terminate unwanted processes.
+    Services-	The Services tab is used to view a list of services running on the computer. You can use this tab to start and stop a particular service.    
+<h3>7.1.3 Use Control Panel</h3>
+    Windows Tools -> Control Panel 
+      or Search -> Control
+ 
+      System and Security - Maintenance
+                            Firewall
+                            System Link -> shortcut to system information
+                            Power Options
+                            File History
+                            Backup and Restore
+                            BitLocker
+                            Storage Spaces
+                            Work Folders
+                            Windows Tools
+      Network and Sharing Center - Devices and Printers
+      Programs - programs, updates                     
+<h3>7.1.4 Control Panel Facts</h3>
+
+System and Security: 
+        -Security and Maintenance - used to review recent error messages and options for resolving issues.
+        -Windows Defender Firewall - used to check firewall status and allow apps through the Windows Firewall.
+        -System - allows you to view RAM and processor speed, remote access, remote assistance, or to see the computer name.
+        -Power Options - used to change battery settings, change what the power buttons do, or change when the computer sleeps.
+        -File History - used to save backup copies of your files and to restore your files.
+        -Backup and Restore (Windows 7) - used to back up and restore with the legacy Windows 7 backup utility and to restore files using the legacy Windows 7 backup utility.
+        -BitLocker Drive Encryption - used to manage BitLocker settings and protect your files and folders from unauthorized access.
+        -Storage Spaces - used to save files to two or more drives to help protect you from drive failure.
+        -Work Folders - used to make your work files available on all devices you use, even when offline.
+        -Administrative Tools - used to clean up hard disk space, run defragmenter, optimize drives, format disks, view event logs, and schedule tasks.
+Network and Internet:	
+        -Network and Sharing Center - used to view network status, connect to a network, and to view network computers and devices.
+        -Internet Options contains the following tabs:
+            -General - modifies your browser home page, startup window, tabs, history, and appearance.
+            -Security - determines your security zone and security level.
+            -Privacy - manages website privacy and enables and disables pop-ups and InPrivate Browsing.
+            -Content - views certificate, AutoComplete, and Feeds and Web Slices settings.
+            -Connections - sets up an internet connection.
+            -Programs - manages your default browser, add-ons, and other internet programs and file associations.
+            -Advanced - sets and resets advanced browser settings.
+Hardware and Sound-   Used to view and configure the current system sound settings, installed audio devices, sound cards, printer settings, and other hardware settings.
+Programs-	Used to uninstall programs, turn Windows features on or off, view installed updates, run programs from previous versions of Windows, get additional programs, and change default settings for media and devices.
+User Accounts-	Used to view and modify user accounts, give users access to the computer, change account types, manage web credentials, and manage windows credentials.
+Appearance and Personalization- Used to configure navigation properties, modify the behavior of input and display devices to accommodate users with special needs, specify single or double click options, show or hide hidden files, and add or remove fonts on the computer.
+Clock, Language, and Region-  Contains settings to configure various items such as language preference, default currency symbols, and date and time notation.
+Ease of Access-  Used to optimize visual display, modify sound and visual cues, change mouse and keyboard settings, and set up speech recognition or a microphone.
+<h3>7.1.5 Use Management Consoles</h3>
+    used to manage aspects of windows (MMC) Microsoft Management Console
+add snap-ins -- makes it highly customizable
+
+'services' is an app in the MMC - allows you to manage your Services
+
+computer management - is a prebuilt MMC with popularly used snap-ins loaded.
+<h3>7.1.7 View System Information</h3>
+gives computer hardware information -- msinfo32
+
+view and set IRQs (Interupt Request)
+ 
+can view hardrives, network information and more from the 'Components'
+   -- also has 'problem devices' section
+
+Software Environment -  System Drivers
+                    - Services
+<h3>7.1.8 System Configuration</h3>
+msconfig (Microsoft System Configuration Utility)
+
+direct x diagnostic tool
+<h3>7.1.9 Use Regedit</h3>
+regedit - 
+   edits the database about the windows hardware and software 
+
+   key - value pairs --> it is a database
+best to create a restore point 
+   you could also make a backup of the registry, but best to create restore point
+<h3>7.1.10 Use Event Viewer</h3>
+    view windows logs with Event Viewer
+
+  Application Logs, Security, Setup, System, Forwarded Event 
+  
+  can create a task and attach to an event
+<h3>7.1.12 Explore System Commands</h3>
+    copy - only move files
+            ex: $ copy File1.txt sub-folder
+    xcopy - like copy but can copy folders and more arguements 
+    robocopy - most switches available -- can use multithreading
+    gpupdate - can force drive mappings
+    gpresult - results on 'group property' managment 
+    winver - shows windows version 
+    shutdown -      
+    ping -
+    pathping - 
+    diskpart - 
+    sfc - 
+    tracert - 
+    net use - 
+    net user -
+    chkdsk - 
+    netstat - 
+    nslookup - 
+    hostname - 
+    rm/rmdir - 
+<h2>7.2 Windows Settings</h2>
+Setting-	A configuration that defines how an application, operating system, or a piece of hardware performs or appears.
+Permission-	 Authorization granted to a user or group to access and perform other tasks on a network resource.
+Indexing-	A method of searching and organizing files and content on a PC.
+Lock screen-	A security measure that displays an image with the date and time when the computer is locked. You can add preferred apps (such as the calendar) to the lock screen.
+Theme-	 A group of settings that allows you to customize the way the Windows desktop appears.
+Taskbar-	The area located at the bottom of the Windows desktop that displays icons for open and pinned apps. You can right-click the icon for additional actions.
+<h3>7.2.1 Personalize Windows</h3>
+    settings on a per user basis
+        -- setting themes
+            -- screen saver is in 'power settings'
+            -- mouse pointer is in themes 
+        background - 
+        color - 
+        configure lock screen - 
+        configure fonts - 
+        start settings - 
+        taskbar settings -     
+<h3>7.2.2 Region and Language Options</h3>
+    start -> settings -> time and language
+<h3>7.2.3 Index Files</h3>
+    configure index options = faster system searches
+        keeps from having to search every media drive for each file every time, saves time
+    search and find Indexing
+    
+      can configure file types under advanced option
+<h3>7.2.4 Setting Facts</h3>
+System: Use the options found in this category to specify how your system performs in areas such as:
+        -Display - monitors, brightness, night light, display profile.
+        -Sound - volume levels, output, input, and sound devices.
+        -Power - sleep, battery usage, battery saver.
+        -Storage - storage space, drives, configuration rules.
+Network & internet: From this category, you can view and manage settings that affect your ability to access your local network and the internet. This category includes options for:
+        -Ethernet - configuring your settings relating to your network interface card, such as IP address, default servers, DHCP services, and more.
+        -VPN - add, connect, and manage.
+        -Proxy - proxy server for Wi-Fi and Ethernet connections.
+        -Dial-up - set up a dial-up internet connection.
+Personalization: Here you can make your working environment more inviting by customizing things like:
+        -Backgrounds
+        -Accent colors
+        -Themes
+        -Start display
+        -Taskbar
+        -Fonts
+Windows Update: This category includes options to view and manage the updates Windows has for your computer. A few of the options include:
+        -The ability to pause updated from being installed for a short period of time.
+        -The ability to set the time updates are installed.
+        -The ability to view the updates which have been installed.
+        -The ability to receive optional updates.
+Privacy & Security: This category has options for keeping the system secure.
+        -Windows security - antivirus, browser, firewall, and network protection for your devices.
+        -The ability to find a lost device.
+        -Advanced settings for developers.
+Windows permissions:
+        -General - advertising ID, local content, app launchers, settings suggestions, and productivity tools.
+        -Speech - online speech recognition for dictation and other voice-based interactions.
+        -Inking & typing personalization - personal dictionary, words in your dictionary.
+        -Diagnostics & feedback - diagnostic data, inking and typing data, tailored experiences, feedback frequency.
+        -Search permissions
+        -App permissions
+        -More
+Bluetooth & devices: Lets you manage devices, such as your mouse, keyboard, and printers.
+Apps: This category allows you to see and manage the apps installed on your device.
+Accounts: Used to manage the Microsoft account for the device, sign-in options, or add extra users to the device. Also includes Windows backup.
+Time and Language: Here the device's date, time, region, and language can all be changed.
+Gaming: For those using the device for gaming, there are settings here for managing features of Xbox and game mode.
+<h2>7.3 Performance Monitoring</h2>
+Bottleneck-	 A congestion that occurs when a component is unable to keep up with demand and subsequently slows down other processes or functions.
+Processor utilization-	 The amount (percentage) of time the processor spends doing non-idle tasks.
+Thrashing- 	A situation that occurs when a computer's virtual memory resources become saturated, leading to a constant state of paging.
+Page file- 	The Windows swap file that holds the virtual memory used to supplement the physical memory installed in a computer.
+Network utilization-	The percentage of traffic sent and received over a network connection.
+Counter-	A device that tracks the number of times an event or process occurs. A counters records a specific statistic, such as the amount of free memory or the number of bytes sent on a network card.
+Object- 	A statistical group, often corresponding to a specific type of hardware device or software process (such as the processor or memory).
+<h3>7.3.1 Performance Monitoring</h3>
+
+<h2>7.4</h2>
+<h3>7.4.1</h3>
+
+<h2>7.5</h2>
+<h3>7.5.1</h3>
+
+<h2>7.6</h2>
+<h3>7.6.1</h3>
+
+<h2>7.8</h2>
+<h3>7.8.1</h3>
+
+<h2>7.9</h2>
+<h3>7.9.1</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>    
+</body>
+</html>
