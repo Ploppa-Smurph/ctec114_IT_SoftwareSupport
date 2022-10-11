@@ -217,17 +217,344 @@ Network utilization-	The percentage of traffic sent and received over a network 
 Counter-	A device that tracks the number of times an event or process occurs. A counters records a specific statistic, such as the amount of free memory or the number of bytes sent on a network card.
 Object- 	A statistical group, often corresponding to a specific type of hardware device or software process (such as the processor or memory).
 <h3>7.3.1 Performance Monitoring</h3>
+watch out for bottlenecks:
+    CPU -- unload unnecessary services / apps; upgrade the system
+    HDD -- disk defrag; faster RPM --- disk thrashing because of virtual memory 
+    RAM -- add memory; look for memory leaks; unload unused apps and services
+    Network Interface
 
-<h2>7.4</h2>
-<h3>7.4.1</h3>
+    counters and objects??
+<b>Counter</b> is a specific statistic you can monitor (such as the amount of free memory or the number of bytes sent on a network card).
+<b>object</b> is a statistic group, often corresponding to a specific type of hardware device or software process (such as the processor or memory).
 
-<h2>7.5</h2>
-<h3>7.5.1</h3>
+    Memory Counters: 
+                - used physical memory
+                - commit charge
+                - hard faults/sec 
+    <b>Resource Monitor</b> look at CPU utilization   
+<h3>7.3.2 Monitor System Performance</h3>
+    use task manager -> more details -> process tab 
+                                        performance tab
+    
+    <b>Resource Monitor</b> (additional tab in task manager at bottom)
+            can see advanced overviews of CPU, Disk, Network & Memory
 
-<h2>7.6</h2>
-<h3>7.6.1</h3>
+    <b>Performance Monitor</b> Right Click Windows icon -> Computer Management -> Performance -> Monitoring Tools -> performance monitor
+        include the counters you want to include (similar to snap-ons)
+    
+    <b>Reliability Monitor</b> search for 'reliability'   
+    Processor utilization-  is the amount (percentage) of time the processor spends doing non-idle tasks.
 
-<h2>7.8</h2>
+    Disk time-  identifies the percentage of time that the disk subsystem is busy reading from and writing to disk.
+    
+    The average disk queue length-  tells you the number of read and write requests that are typically waiting to be processed.
+    
+    The commit charge-  identifies how much memory has been assigned to running processes.
+    
+    The memory pages per second-  statistic identifies the number of hard faults that occur each second. 
+<h3>7.3.3 Performance Monitoring Facts</h3>
+Task Manager-	A utility program used for managing, monitoring, and troubleshooting applications and background processes. Under the More Details option you will find several areas for specific monitoring and troubleshooting including:
+        -Services
+        -Startup
+        -Performance
+        -Processes
+        -Users
+        -App History
+        -Details
+Resource Monitor-	A utility program that gives more granular information than Task Manager in the same categories. Here you can find utilization graphs for CPU, Disk, Network, and Memory performance.
+Performance Monitor-	A utility program used for collecting data. In this program, you must specify the counters to include. Once you set the counters you want, the graph can give you a helpful overview of system performance.
+<h2>7.4 Windows Application Management</h2>
+Application-  A software program that performs a specific task or function on a computer or device.
+Compatibility Mode-  A Windows feature that allows you to run an older program using settings from a previous version of Windows.
+Program Files-  A standard folder in the Microsoft Windows operating system in which applications are typically installed.
+64-bit processor-  A central processing unit that can process 64 bits of data at a time, to a maximum address memory of 200 gigabytes for a high-end workstation.
+32-bit processor-  A central processing unit that can process 32 bits of data at a time, to a maximum address memory of 4 gigabytes.
+<h3>7.4.1 Windows Application Installation</h3>
+    installing apps from microsoft store?? -- 
+        -check to see if you are running a 32bit or 64bit
+    graphics requirments -- VRAM (Video RAM) - expansion slot in computer
+    igpu -> integrated graphics processing unit
+    RAM 
+    Storage requirments
+    CPU requirments
+    External Hardware Token - Keyfob or ...
+    OS requirments
+    Distribution Method -> digital or physical. on PC using .exe file or .iso file (.msi)
+            mount .iso and it will run like a disk drive
+    Impact Considerations
+    Manage from : Windows Settings -> Apps 
+            or    Control Panel -> Programs        
+<h3>7.4.2 Manage Windows Applications</h3>
+    installing a new app
+        double click the .exe & grant permissions
+        choose where to install
+        accept user agreement
+<h3>7.4.3 Manage Windows Applications Facts</h3>
+    - Installation typically modifies the registry, creates shortcuts, and configures other settings required by the application.
+    - Installation of an application usually creates a tile on the Start menu and may also create a shortcut on the desktop. A shortcut is a pointer file that identifies the location of the executable file that runs the application.
+        -Shortcuts that point to removable drives (such as CD/DVD drives) or network drives could become unavailable if the referenced drive is disconnected.
+        -During installation, you can often choose to add shortcuts for only the current user or all users.
+        -The shortcut also identifies a directory that the application uses or references when it first starts. You can modify the directory by changing the Start in property for the shortcut or executable file.
+      =By default, applications are installed into the Program Files directory on the root of the system drive.
+        -During installation, you typically can specify an alternate install location.
+        -64-bit operating system versions include an additional folder named Program Files (x86). 32-bit applications are installed into this folder.
+      =Users must have the correct permissions or rights to install applications. The ability to install applications depends on the user's group membership and the operating system:
+
+Users-	Users who are members of only the Users group are not able to install applications. If you're signed into a limited account, you see a dialog box asking you to enter an administrative password.
+Administrators-	 Only people with administrative privileges can install programs in Windows 10. If you're already logged on with an administrative account, Windows 10 asks you if you want to allow the program to make changes to the computer.
+
+    -In some cases, users require special privileges or rights to run applications. For example, legacy applications that access the system in certain ways may require running the application as an administrator.
+    -Copying an application's shortcut to the C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup folder will cause that application to be automatically launched every time the system is booted. You can also use Task Scheduler to configure an application to run automatically based upon event triggers that you define.
+    -Many applications as they run create data files (such as documents or video files), and might also require creating temporary files. The user must have sufficient permissions to the directories where the data and temporary files are created.
+<h3>7.4.4 Configure Application Compatibility</h3>
+        running old software on a newer machine
+<h3>7.4.5 Compatability Facts</h3>    
+To install Hyper-V on Windows, a system must meet the following requirements:
+
+    -Enterprise, Pro, or Education editions
+    -CPU support for VM Monitor Mode Extension (VT-c on Intel CPUs)
+    -64-bit processor with Second Level Address Translation (SLAT)
+    -4GB or more memory
+
+To enable Hyper-V through Settings:
+
+    -Right click Start.
+    -Select Apps and Features.
+    -Select Turn Windows Features on or off.
+    -Select Hyper-V.
+    -Click OK.
+<h3>7.4.6 Schedule Tasks</h3>
+    runs a task when scheduled, so humans don't forget
+
+    access through:  search for Task Scheduler (or through Computer Management)
+<h3>Manage Microsoft Store Apps</h3>
+<h3>Microsoft Store App Facts</h3>    
+To manage the application once installed, use any of the following:
+
+    -Right-click Start and select Apps & Features. This opens the Settings app. From here you can:
+        -Configure advanced options, such as:
+            -View specification
+            -Set background apps permissions
+            -Set to run at log-in
+            -Repair and reset the app
+        -Uninstall the app.
+
+    -Right-click the application's tile from the Start menu. From there you have the following options:
+        -Pin to Start.
+        -Run as administrator.
+        -Pin to taskbar.
+        -App settings. This option takes you to the app's setting in Windows Settings.
+        -Uninstall. This option removes the app from the device.
+        -Remove from list. This option removes the app from the Start menu.
+
+To sideload an app in Windows 10:
+
+    1)Open Windows Settings.
+    2)Select Update & Security.
+    3)Select For developers.
+    4)Under Use developer features, click Sideload apps or Developer mode.
+    5)Click Yes.
+
+To sideload an app in Windows 11:
+
+    1)Open Windows Settings.
+    2)Select Privacy & security.
+    3)Select For developers.
+    4)Under Developer Mode select On.
+<h3>7.4.9 Manage Apps Lab</h3>
+<h3>7.4.10 Repair Programs Lab</h3>
+<h2>7.5 Linux Application Management</h2>
+        What is a software package?
+        Which Linux distributions use the yum command to manage software? Which distributions use apt-get or apt?
+        Which yum command searches online repositories for a particular package, downloads it, and installs it?
+        Which yum command downloads and installs the latest updates for packages installed on the system?
+        Which apt-get or apt command uninstalls a package from the system?
+        Which apt-get or apt command updates all the installed packages on a system?
+        Which option can you use with the ps command to view all processes running on the system?
+        How can you get help with a Linux command?
+<h3>7.5.1 Install Linux Software</h3>
+    differ depending on distributions. 
+        Debian uses apt-get / apt  --> bundled as .deb package
+        Fedora / Redhat --> bundled as .rpm package  
+        
+    the installation will install additional dependencies
+        -repositories 
+<h3>7.5.2 Manage Apps on Linux</h3>    
+        using graphic interface -- and ubuntu software store 
+           search in the software store
+             -- most apps will need permissions to install
+    you can remove apps in the software store, also --> go to installed tab and remove any apps you don't want         
+<h3>7.5.3 Manage Processes on Linux</h3>
+    ps utility
+        $ ps
+
+        displays all processes that are running in the current terminal
+
+        PID - process ID
+        TTY - Shell name and process
+        Time - time process has run
+        CMD - name of command to run the process
+
+    $ ps -e   [shows all process on the system]
+       this will give you more information
+         many TTY will show ? if you run 'ps -e' becasue the process isn't running in a shell, they are in the background
+    
+    $ ps -ef       [will display PPID = Parent Process ID] -- the parent process can launch additional process
+
+    $ ps -elf       [display long format with additional information] -- shows state, WCHAN, ADDR, PRI (Priority) 
+<h3>7.5.4 Linux App Facts</h3>    
+yum-	The yum command installs packages on Linux systems that use the Red Hat Package Manager (RPM). The yum command can automatically locate and download RPM packages for you by searching one or more repositories on the internet. It can install the package and all its dependencies at the same time.
+
+    The syntax for using yum is as follows:
+        -yum install package_name installs the specified package.
+        -yum remove package_name uninstalls the specified package.
+        -yum list installed lists all packages installed.
+        -yum list installed package_name checks to see if the specified package is installed.
+        -yum list available displays a list of all packages available for installation within the internet repositories yum is configured to use.
+        -yum list updates generates a list of updates available for all installed packages.
+        -yum update package_name installs updates for the specified package.
+        -yum info package_name displays information about the specified package, including its version and dependencies.
+        -yum search keyword searches for any packages that contain the specified keyword in the description, summary, or package name fields within the internet repositories yum is configured to use.
+
+apt-get-	The apt-get command installs packages on Linux systems that use the Debian Package Manager (dpkg). The apt-get command can automatically locate and download Debian packages by searching one or more repositories on the internet. It installs the package and all its dependencies at the same time.
+
+    The syntax for using apt-get is as follows:
+        -apt-get install package_name installs the specified package.
+        -apt-get remove package_name uninstalls the specified package.
+        -apt-get update displays information about all packages available within the internet repositories apt-get is configured to use.
+        -apt-get dist-upgrade upgrades all installed packages to the newest version.        
+
+apt-	The apt command is similar in design and function to the apt-get suite of tools mentioned above. It manages dpkg packages on Debian and Ubuntu-based distributions. You can also use it for locating, downloading, and installing packages found in online repositories.
+
+    The syntax for using apt is as follows:
+        -apt install package_name installs the specified package.
+        -apt remove package_name uninstalls the specified package.
+        -apt search search_term searches for packages with the earch term found in the configured repositories.
+        -apt update updates repositories with the latest list of available packages found in the configured repositories.
+        -apt dist-upgrade upgrades all installed packages with any available updated packages.        
+
+ps- 	You can use the ps utility to display running processes on a Linux system. Many options can be used with the ps command. Several commonly used options include:
+            -ps displays only those processes associated with the current shell session.
+            -ps -e displays all processes running on the system.
+            -ps -f displays extended information about processes.
+            -ps -l displays information about processes in long format. This option can be combined with the -e and -f options to display extended process information in long format.
+        
+        There are some commonly used combinations of options:
+            -ps aux displays all running processes and includes the user (owner) column in the output.
+            -ps -ef displays all processes and includes extended information.
+        
+        You can display the following fields in the output of the ps command, depending on which options are included with the command:
+            -PID displays the process ID of the process.
+            -TTY displays the name of the shell session the process is running within.
+            -TIME displays the amount of CPU time used by the process.
+            -CMD displays the name of the command that was run to create the process.
+            -UID displays the user ID that owns the process.
+            -PPID displays the PID of the process's parent.
+            -C displays the amount of CPU utilization consumed by the process.
+            -STIME displays the time that the process started.
+            -F displays any flags associated with the process.
+            -S displays the current state of the process.
+            -PRI displays the priority of the process.
+            -NI displays the nice value of the process.
+            -SZ displays the size of the process in RAM.        
+<h3>7.5.5 Manage Linux Processes Lab</h3>       
+<h2>7.6 Digital Content Management</h2>
+    Digital Rights Management-   Software and hardware security limitations meant to protect digital content and prevent piracy.
+    Proprietary-	Exclusive ownership or holding exclusive rights to something.
+    Open source-	Software or operating system source code that is distributed under the GNU General Public License free to anyone. The software or operating system source code can be modified and redistributed under the GPL without fees.
+    End User License Agreement-   A legal contract detailing the terms of use between a software application author or publisher and the end user of that application.
+<h3>7.6.1 Software Licensing</h3>
+    DO NOT Violate Software Licensing Agreements
+      - Proprietary: Software for profit made by a single company. 
+          - License to USE
+          -- Cannot access source code or modify
+          - EULA [agree to End User License Agreement]
+          - Perpetual vs Subscription
+          - Installtion Limits are Specified
+        Personal License vs Enterprise - personal small business or home | enterprise for large orginization    
+      
+      - Open Sourece: Linux -- may ask for contributions, charge for support contracts, charge for training contracts, or charge for advanced add-ons 
+        - Freely Distributed [GNU or GPL]
+        - Source Code is accessible
+        - Source Code is modifiable
+        - Modified Code is shared with the community
+
+Software Life Cycle:
+    Need is identified
+    PRD (Product Requiremnt Document)
+    Write the Code
+    Test the Code
+    Fix Bugs
+    Send Out Product
+    Collect Feedback and Start Cycle Again        
+<h3>7.6.2 DRM Digital Rights Management</h3>
+    DMCA - Digital Millennium Copyright Act
+
+    Copyright Laws 
+
+    don't dl pirated software at work 
+    don't use licensing codes found on the internet to circumvent at work
+
+    Copy Protection - Fingerprinting and Watermarks
+
+    Permission Management - User Auth
+                            IP Address Auth
+                            Licenses
+    
+    Online Activation - one-time activation
+                      - persistent activation
+    
+    Activation Drawbacks - some hardware updates can deactivate the program
+<h3>7.6.3 </h3>
+Proprietary-	The proprietary licensing model is used by many software vendors. Each vendor you purchase a proprietary license from should provide an End User License Agreement (EULA) that dictates the specific terms for that software title.
+
+        There are several key facts that you need to remember about proprietary software licensing:
+            -When you purchase this type of software, you are not purchasing the software itself. Instead, you are purchasing a license to use the software.
+            -You are not allowed to access the software's source code and make modifications. Usually, the source code is not made available to customers. A EULA does not typically allow you to reverse engineer the software to recreate the source code.
+            -The license usually permits you to install the software only on a fixed number of computers. Installation limits are commonly enforced by the software vendor using online software activation. If you try to use the same activation code too many times, the software will not activate and can't be used.
+        
+        Two different, general types of licenses are usually offered by software vendors:
+            -Personal licenses are intended for home and small business customers.
+                -Usually, the license allows the software to be installed on only one to three systems.
+                -Because they are limited in the number of allowed installs, personal licenses are usually less expensive than alternatives.
+                -Personal licenses may not be the best choice for large organizations, which may need to purchase hundreds or even thousands of licenses for a given software title.
+            -Enterprise licenses (which are also sometimes called volume licenses or corporate use licenses) are intended for medium and large organizations.
+                -Enterprise licenses allow the customer to install the software without restriction using the same activation code (typically until a maximum cap is reached).
+                -Because of the volume involved, the customer is usually able to purchase an enterprise license for much less than the cost of purchasing individual personal licenses.
+                -Enterprise licenses are usually too expensive for most home or small business users.
+Open Source-	In the past, open source software was exclusive to Linux and Unix operating systems. However, many open source applications are now available for Windows and Mac operating systems. Open source licensing is very different from proprietary licensing:
+            -Open source software is usually freely distributed. You can typically download, install, and use the software without paying a license fee.
+            -Most open source software is distributed under the GNU General Public License (GPL), which requires that the source code for the software be freely distributable to anyone who wants it. This means you can download the source code for an application, modify it, recompile it, and then use the modified version of the software. You can even post it for others to use if you make your source code freely available as well.
+    
+    Organizations that release open source applications typically use a variety of means to generate revenue so they can keep developing new products:
+            -Contributions - Some open source projects ask you to contribute financially if you use their software.
+            -Added functionality - Some open source projects release a base version of their software for free and charge a fee for highly desirable add-ons.
+            -Support contracts - Some open source projects release their software for free and charge a fee for technical support.
+            -Training contracts - Like support contracts, some open source projects also provide training for a fee.
+            -Partnerships - Sometimes an open source project partners with a commercial organization. In this situation, two versions of an application are created, one that is proprietary and one that is open source. The proprietary version is typically used to finance the development of the free version.
+            -Subscriptions - Sometimes an open source project sells subscriptions for online accounts or server access.                                                
+
+
+Copy protection-	Copy protection is used to prevent materials from unauthorized copying. This includes the following technologies:
+            -Encryption - Makes digital materials accessible only through authorized decryption software or devices.
+            -Fingerprinting - Identifies unique properties of a file and compares them to a database of fingerprinted files to track access to materials.
+            -Digital watermarks - Embed traceable information into the file.
+            
+Permission management-	Permission management is also used to control access and distribution. This includes the following technologies:
+            -User authentication - Requires authentication credentials from an authorized user to access materials.
+            -IP address authentication - Restricts access to specific authorized IP addresses.
+            -Licenses - Restrict access to those systems that have gone through the proper activation process. Licenses use activation codes. Key facts are:
+                -Online activation typically works by requiring the user to:
+                    -Install the program.
+                    -Use the vendor provided access code to activate the program online.
+                    -Use only the number of activations permitted by the purchased license.
+                -Two forms of online software activation are used by software vendors:
+                    -One-time activation - The license is activated once, usually right after the product is installed. Once activated, the product remains activated.
+                    -Persistent activation - The license is continuously re-activated online at specified intervals. This allows the software vendor to deactivate installations if the conditions of the license agreement have been violated.
+                -Using online activation helps software vendors ensure their products are used in compliance with the license agreement. However, it also has several drawbacks that require you to contact the vendor to reactivate the software:
+                    -Online activation mechanisms can fail if an internet connection isn't available.
+                    -A small system change can deactivate the software. For example, adding RAM to the system or upgrading the CPU could cause the activation system to think the application has been illegally copied to a new computer system.            
+<h2>7.8 </h2>
 <h3>7.8.1</h3>
 
 <h2>7.9</h2>
