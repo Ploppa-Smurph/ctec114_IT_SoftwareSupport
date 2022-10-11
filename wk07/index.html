@@ -554,21 +554,294 @@ Permission management-	Permission management is also used to control access and 
                 -Using online activation helps software vendors ensure their products are used in compliance with the license agreement. However, it also has several drawbacks that require you to contact the vendor to reactivate the software:
                     -Online activation mechanisms can fail if an internet connection isn't available.
                     -A small system change can deactivate the software. For example, adding RAM to the system or upgrading the CPU could cause the activation system to think the application has been illegally copied to a new computer system.            
-<h2>7.8 </h2>
-<h3>7.8.1</h3>
+<h2>7.8 Windows and Application Troubleshooting</h2>
+Blue screen of death (BSOD)-  An error screen in Windows that displays when an error is so severe that Windows can no longer continue to function. Starting with Windows 11, the background for this error message is now black.
+Basic Input/Output System (BIOS)-  Firmware that initializes the boot process at startup and provides runtime services.
+Unified Extensible Firmware Interface (UEFI)-	Firmware designed to replace BIOS firmware and used to initialize the boot process.
+<h3>7.8.1 Troubleshooting Windows pt 1</h3>
+    Tools for the Windows Tool Box: 
+                            1) Reboot the System
+                                   - Clears RAM
+                                   - Stops Running Tasks
+                                   - Stops Memory Leaks (process that continue to run after being shut down)
+                                   - Corrects Software Glitches
+                                   - Allows for Cool Down 
+                                   - Restart interrupted updates
+                            2) Service Restart
+                                   - long running apps
+                                   - run in the background
+                            3) Boot Problems
+                                   - Recently Installed update      
+                                   - Improper shutdown
+                                   - Malware
+                                   - Partition problems
+                                   - Peripheral Devices
+                                   - other [many many other problems] 
+                            4) Startup Repair on windows -- can fix certain problems (shift + restart)
+                                   - Startup Repair 
+                                   - Change UEFI Firmware Settings 
+                                   - Access Command Prompt
+                                   - System Restore from a Restore Point 
+                                   - Uninstall Updates 
+                                   - System Image Recovery
+                            5) System File Checker 
+                                   -- from Startup Repair [Shift + Restart] use Command Prompt
+                                   -- $ sfc /scannow                        -at the prompt           
+                                          **$ sfc /scannow can be run from PowerShell with admin rights
+                            6) Rebuild User Profile
+                                    - login as admin & run 'Computer Management'
+                                       - create a new user & reboot
+                                    - sign in as the new user
+                                    - copy all files and folder from old account to new one... ??
+                            7) Conflict with Apps
+                                    - Check app system requirements
+                                    - Check for updates 
+                                        - Windows OS updates 
+                                        - App / Driver updates
+                                    - Uninstall and Reinstall the app  
+                                    - may have to upgrade RAM or CPU (try increasing Virtual RAM)
+<h3>7.8.2 Troubleshooting Windows pt 1 facts</h3>                                             
+    Startup Repair-	 This tool fixes damaged or missing system files, which can stop the boot process.
 
-<h2>7.9</h2>
-<h3>7.9.1</h3>
+                - Startup Repair can fix only certain problems, such as replacing any missing or corrupt systems files that might be preventing Windows from booting.
+    
+    System Restore-	 This tool lets you revert the system back to a previously created restore point. A restore point is like a snapshot of the computer's settings and data at a moment in time.
+
+                - System Restore does not change files like documents, photos, or email. If Windows stops working properly, this tool can be helpful to go back to a restore point when it was working properly.
+    
+    System Image Recovery-	This tool installs a complete image of the Windows system including the operating system, the settings, personal files, hardware drivers, and software.
+
+                - This option is available only if you have previously created a system image and saved it to an external drive.
+    
+    Uninstall Updates-	This tool allows you to roll back or uninstall a previously installed Windows update.
+
+    Restart services-	Services are low-level tasks that run in the background with no user interaction and should begin automatically with startup. Important services that are not running properly can result in OS problems.
+
+            - Services can be managed using the Windows Services app. One way to open the Windows Services app is by typing 'services' in Windows search and then selecting the Services app from the Best match options.
+
+    From the Services app you can:
+            - See the services that are set to start automatically and those that are set to start manually.
+            - Right-click the application and select either Restart Stop, Start, Pause, and Resume.
+You can check for errors relating to a service using Event Viewer.
+
+Use System File Checker-	Corrupted system files can cause:
+                                -Boot problems
+                                -Slow performance
+                                -Inability to open a file
+                                -Unexpected shutdowns
+                                -Error screens
+            System File Checker is a utility that scans the operating system files, and (when possible) replaces corrupted, altered, or incorrect files.
+
+            To run System File Checker:
+                -Open Windows Terminal (Admin). This opens PowerShell.
+                -At the PowerShell prompt, type:
+                -'DISM.exe /Online /Cleanup-image /Restorehealth' and press Enter
+            Once the above has been completed:
+                -Type 'sfc /scannow' at the PowerShell prompt.
+                -Press Enter.
+                -Watch for the message: The operation completed successfully.
+
+Rebuild Windows profiles-	If a user profile becomes corrupted it will prevent the user from accessing Windows.
+
+                Troubleshooting options are:
+                    -Rebuild the profile:
+                        -Type 'regedit' in Windows search bar.
+                        -Open Registry Editor.
+                        -Rename any corrupted files names.
+                    -Create a new profile:
+                        -Create a restore point.
+                        -Delete corrupted files from the registry.
+                        -Copy and paste clean files from the previous profile.
+            
+Uninstall/reinstall/update applications-	Conflicts between applications and the operating system can cause Windows to have problems.
+                
+                Steps to troubleshoot application conflicts are:
+                    1)Check the application's system requirements for compatibility.
+                    2)Check for updates in:
+                        -Windows
+                        -The application
+                        -The application's drivers
+                If these steps do not resolve the conflicts, uninstalling the application and reinstalling it often resolves the conflict.
+                
+Add resources-	When the system is running sluggishly or applications often hang, it may be a resource issue.
+                
+                Low memory warnings can indicate the RAM is insufficient. To troubleshoot inadequate RAM:
+                
+                    -Close any unnecessary programs.
+                    -Configure the virtual memory to have greater capacity.
+                    -Check for malware.
+                    -Add more RAM.
+                
+                Adding more RAM by itself may not increase the speed of a sluggish system because increased RAM may need more processing power to go with it. Upgrading the CPU when you add RAM can improve system performance.
+                
+                Keep in mind when upgrading the CPU, the more cores a CPU has, the more processing it can do at once (increasing performance).
+<h3>7.8.3 Troubleshooting Windows part 2</h3>
+        BSOD Blue Screen of Death / Stop or Kernel Error - now Black Screen of Death
+                - check for malware -- get into safe mode and scan for malware
+                - new updates
+                - outdated drivers
+                - applications
+                - outdated windows os
+                - update bugs
+             Hardware Based Issues -- external devices 
+                make certain that fans are running and system is clean and not overheating 
+        
+        System Instability
+
+        OS not found error:
+                boot file is missing or corrupted
+                booting from the incorrect drive
+            
+            boot into bios: 
+                make certain pointed at correct drive.
+        
+        USB 3.0 can only have 16 endpoints.
+
+        Time Drift 
+            misconfigure at setup 
+            change during an update
+         can show up as sign-in restrictions
+           - can have certificate errors
+           - virus scan runing @ incorrect time
+<h3>7.8.4 Troubleshooting Windows part 2</h3>           
+Software-based causes-	System instability and the black screen of death can come from the following possible software sources.
+            -Malware can corrupt drivers or system files. Be sure to keep anti-malware up to date.
+            -New updates can cause system instability. Rollback or uninstall new updates that cause errors.
+            -Outdated drivers.
+            -Outdated applications.
+            -Outdated Windows software. Update drivers, applications, and Windows regularly.
+
+Hardware-based causes-	System instability and the black screen of death can come from the following possible hardware sources:
+            -Overheated hard drive.
+            -Overheated hardware.
+                -Make sure ventilation areas are clean and unrestricted.
+                -Listen for a functioning fan.
+            -Peripheral device malfunctioning. Unplug all peripherals except the keyboard and mouse. Plug each device in one at a time to find the faulty device.
+            -Hardware failure.
+                -Perform a hardware diagnostic test to identify the problem.
+                -Backup regularly to avoid data loss.
+            -Loose hardware (RAM chips, hard drives, data cables, etc.). Secure any loose chips, drives, or cables.
+
+            Some facts to understand about USB ports include:
+
+    USB ports use endpoints.
+         -Endpoints are data buffers that aid in communication between the USB device and the host.
+         -Endpoints allow traffic in only one direction.
+         -Endpoints come in pairs: one outgoing endpoint and one incoming endpoint.
+      -3.0 USB ports are limited to 16 endpoint pairs and are faster than 2.0 USB ports.
+      -2.0 USB ports are limited to 32 endpoint pairs and are slower than 3.0 USB ports.            
+
+Time drift is the condition that occurs when the Windows system time is out of sync with the server. Indicators of a time drift problem include:      
+<h3>7.8.5 Troubleshoot Windows Apps</h3>
+    looking at app shortcuts: pointer to the app
+
+ENVIRONMENT VARIABLES HAVE '%' around them 
+ex: %sys32%
+
+if you Right Click Windows Icon -> System -> scroll to 'Advanced system settings' -> Environment Variables 
+    it will show you the user and system defined variables
+
+use Task Manager - for Details, using priorites / affinities for tasks 
+ -startup
+
+search for apps and features 
+    - modify 
+    - uninstall 
+<h3>7.8.6 Troubleshoot Windows Services</h3>
+ search for 'Services'
+  - use the services app to troubleshoot services
+
+ msconfig for System Configuration -- search before making changes 
+
+ use Event Viewer to make certain 'services' are running correctly
+<h2>7.9 Scripting Basics</h2>
+Script-   Text files with commands and structures specific to a scripting language.
+Scripting language-   An interpreted programming language used in a text file, usually human-readable.
+Use case-   An example of how a technology can be used in a real-life example.
+<h3>7.9.1 Scripting</h3>
+    python, java script visual basic script
+      -- usually human readable 
+      -- can automates task
+
+   an interpreted language 
+       read and executed line by line 
+       
+    human readable 
+
+    python - high level readable code, used for datasets -- popular in scientific 
+
+    Shell Scripting - each has the own syntax -- borne shell (sh) is the base
+        also 'bash' = borne again shell
+
+    formerly batch files. 
+    
+    powershell is popular for scripting and has done away with batch files. 
+
+    used to restart systems 
+    map or remap network drives
+    backup data
+    install apps on multiple systems at 1 time
+    add multiple users to a system using a database using powershell
+
+Scripting Considerations 
+        -- inadverdent system changes 
+        -- online services may change and script would no longer be valid 
+        -- test in closed environment and log 
+<h3>7.9.2 Scripting Types</h3>   
+vbscript, jscript, and powershell 
+
+<b>PowerShell</b> = command line shell and scripting language all in one 
+        take cmdlets and wrap them together to perform tasks. 
+
+    update the execution policy:
+    $ Set-ExecutionPolicy AllSigned
+    
+<b>bash</b> Linux uses bash the most -- and can use python scripts
+
+update linux execution policy to allow scripts: 
+        $ chmod u+x dir_exists.sh   or  $ 
+
+macOS has zshell or bash -- structure is identical to linux
+<h3>7.9.3 Scripting Uses</h3>
+    automation- adding user accounts [large new hires at one time] 
+    updating- script to patch or update
+    restarting machines- script to remotely restart machine 
+    gather system information-  
+<h3>7.9.4 Scripting Facts</h3>
+Python-   Python is a high-level, general-purpose programming with a focus on code readability. It is used extensively with large data sets and is very popular with the scientific community. It can also be extended, which allows new features or specific functions to be added to its toolbox. The file extension for a Python script is usually .py.
+Shells-   In the Linux and Unix world, the most popular method of scripting is shell scripting. Although there are several languages that fall under the term shell scripting, the most common forms of shell scripting include:
+        -Bourne Shell (sh)—the most commonly used
+        -Bourne Again Shell (bash)
+        -Korn Shell (ksh)
+        -Z Shell (zsh).
+    Each shell has its own syntax variation, but all are directly related to the Bourne Shell. Shell scripts are extensively used for automation and maintenance in Linux. The file extension for a shell script is usually .sh.
+
+Batch Files-   Although not technically a scripting language, batch files (.bat) can collect multiple Windows commands and execute them in turn. With the introduction of PowerShell, batch files have become less common, but they’re still used. The file extension for a batch file is .bat.
+
+PowerShell-	  PowerShell started as a Windows-specific tool used to leverage Windows APIs to perform tasks. It has grown to include many common scripting functions. It has greatly increased Windows automation capabilities. The file extension for PowerShell scripts is .ps1.
+
+Visual Basic script (VBScript)-   VBScript is a Windows-specific language used by systems administrators and web developers. Although VBScript was very popular is previous versions of Windows, it has been widely replaced by PowerShell. The file extension for a VBScript file is .vbs.
+
+JavaScript-   JavaScript is used widely for website and webpage design. It is the most popular programming language in the world. JavaScript provides many of the design and UI functions of the most popular websites, from Facebook and Amazon, to TikTok. The file extension for a JavaScript file is .js.
 
 
 
+Automate tasks-	  The automation of repetitive or data intensive tasks is a core reason for scripting. Three examples of how a script can make a monotonous administrator task simple and time efficient are:
+        -Importing a spreadsheet of user information into an Active Directory tree.
+        -Renewing the IP leases of DHCP clients after a router update.
+        -Restarting a collection of servers. The servers must be restarted in order and each one can restart only after the previous server has finished rebooting.
+    A script can make a task simple, leaving the administrator to monitor the process, instead of manually performing it.
 
+Remap network drives-	 Frequently, there are routers and switches between the client machines and the servers they connect to. If one of those routers were to fail, be reconfigured, or cause an interruption between client and server, a properly written script could remap necessary network drives.
 
+Software installation-	 Although similar to automation, software installation is mentioned here separately because or its importance. When software standards change or new systems are brought online, a significant amount of time is consumed pushing the required software to a list of servers or desktops. A correctly configured script can automatically download and install software to prepare systems for use within an organization.
 
+Automated backup-	 Good backups are a sign of a good administrator. Using a script to automate the process, dictating what data to back up and when makes it efficient as well. Automatically backing up a server before it is wiped and reinstalled or repurposed can save you time and headaches.
 
+Gathering information-	  Sometimes administrators need information before they act. As an example, sometimes a specific piece of hardware (let's say a type of NIC) needs to be replaced because of a bug.
+            With a good script, an administrator can run a query of all machines that might have the same hardware, compile a list of query results, and return the list when it finishes. That way, instead of connecting to each machine and looking manually, the task is done behind the scenes in much less time.
 
-
-
+Updating systems-	Careful planning of which software updates to apply to what systems, as well as when to apply the updates, is always a good idea. Using scripting, administrators can send the updates to a specific list of systems, at a specific time, and restart those machines as needed.
 
 
 </pre>    
