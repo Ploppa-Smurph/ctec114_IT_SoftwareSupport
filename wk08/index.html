@@ -158,17 +158,86 @@ gpresult- 	This command displays a listing of the group policy objects that have
     take precedence over settings in the Local Group Policy. GPOs linked to the user's organizational unit are applied last and take precedence over any preceding policy settings.    
 
 - The Local Group Policy Editor is the administrative tool you can use to enable local computer behavior policies and the tasks that users are allowed to perform. The policy that turns off the Windows Store application is found under Computer Configuration settings.    
-<h2>8.2</h2>
-<h3>8.2.1</h3>
+<h2>8.2 Users and Groups</h2>
+User account-	An account that identifies a specific user. You can assign rights and permissions to a user's account.
+Group- 	A collection of user accounts you can use to assign rights and permissions to multiple users.
+<h3>8.2.1 </h3>
+** skipping to just doing labs and quizzes cause i'm low on time **
 
+<h3>8.2.8 Manage Users and Groups</h3>
+    - right-click start and go to 'computer management'
+    - expand 'local users and groups'
+    - right-click user and 'add new user'
+    - enter username
+    - enter password
+    - confirm 'change password at next login' is checked
+    - select 'create'
 
+   -- make sylvia 'admin'
+   -- make scott 'backup operator'
+   -- jed is 'users' group 
+<h3>8.2.11 Quiz Facts</h3>
+- Many Windows features or third-party applications create additional groups in order to access rights and permissions. 
+    If you delete the group, the application probably won't launch or work properly.
 
+- Members of the Users group are not allowed to make system-wide changes, such as installing new applications. Only users who are members of the Administrators group can install new applications.
 
-<h2>8.3</h2>
-<h3>8.3.1</h3>
+- A Windows group is used to identify groups of user accounts that have similar access needs. Group members have the permissions and rights assigned to the group. Using groups simplifies administration. 
+  Instead of assigning permissions to each individual user account, you can assign permissions to the group and then make user accounts members of that group.
 
+- Windows Hello requires you to set up a PIN before you can register a facial or fingerprint scan for your account.
 
+- If you are using a computer with a TPM chip, it is automatically configured for a set number of failed PIN attempts (about 10) before lockout (you do not need to set this up). 
+   If your laptop does not have a TPM chip, you can set up BitLocker for lockout after several failed PIN attempts.
 
+- Active Directory uses the single sign-on (SSO) process to simplify how users sign in to all the systems and applications that they need. When a user logs in, their credentials are authenticated with the 
+    authentication server. When the user visits a trusted resource, the authentication server vouches for the user, and the resource allows them access.   
+
+- The Sign in with a Microsoft account instead option lets you associate your local user account with your online Microsoft account.
+        - The Manage my accounts option lets you manage your user accounts, but does not provide an option to associate your local user account with your online Microsoft account.
+        - You can use the Family & other users option to allocate a specific number of hours for screen time, enforce content filters, and receive activity reporting for specific family members.
+        - Users and Groups is a snap-in that is used in the Computer Management tool to manage user accounts.    
+
+- When a standard user logs on, a standard user token is created. But when an administrator logs on, two access tokens are created. Windows creates a standard user token, and then Windows also creates an administrator token.
+
+- When you select the Notify me only when programs try to make changes to my computer (do not dim my desktop) option, the following happens:
+        - Notifications occur when programs make changes.
+        - Notifications do not occur when you make changes.
+        - The desktop is not dimmed, which means Secure Desktop is disabled.
+<h2>8.3 Remote Services</h2>
+<h3>8.3.1 Remote Access Technologies</h3>
+** skipping to the labs and quizzes **
+<h3>8.3.9 Configure Remote Services Lab</h3>
+    -Verify the firewall port configuration.
+        -From the left pane, select Privacy & security.
+        -From the right pane, select Windows Security.
+        -Select Open Windows Security.
+        -Select Firewall & network protection.
+        -Select Allow an app through firewall.
+        -Scroll down and verify that Remote Desktop is selected, 
+           indicating that the port is opened.
+<h3>8.3.12 Quiz Facts</h3>
+- Screen Sharing is built into macOS.
+
+- Remote management and monitory (RMM) software lets you perform tasks remotely, such as analyzing activity and receiving automated alerts for unusual device activity. An RMM is the best solution in this scenario.
+
+- Remote Desktop provides a remote user with full access to the graphical desktop of a Windows system. This allows them to run programs, manipulate files, and restart or power down the computer (just like a regular user).
+
+- Using waiting room features and a strong password can best help you secure your video conferencing software.
+
+- users who are members of the Administrators or Remote Desktop Users groups are allowed to establish Remote Desktop connections with a Windows system. You can use either group. However, in this scenario, the best option would probably be to make her a member of the Remote Desktop Users
+      group instead of Administrators to avoid granting her too many permissions and rights.
+
+- In order for you to connect to the employee's desktop using Remote Desktop, all other remote connections must be inactive. Because this is an escalated issue from a Level 1 operator, it is highly likely that the Remote Desktop connection between the Level 1 operator and the employee's desktop has not been disconnected.
+            Remote Desktop opens TCP port 3389 and allows RDP traffic
+
+- The best approach is to instruct the employee to establish a Remote Assistance or Quick Assist session to watch what he is doing. In the session, you could also take control and show the employee how to complete the task.
+
+- With Remote Assistance, the user initiates the session.
+    - Remote Assistance allows both the user and the remote user to be logged in at the same time. Remote Desktop only allows one user (such as the remote user) to be logged in at a time.
+    - Remote Assistance is designed to provide or receive remote help. Remote Desktop is designed for user productivity.
+
+- the administrator cannot access the Screen Sharing session is that Rachel has the Specific Users Only option selected, and the administrator is not listed as a user that can access her iMac.
 <h2>8.4</h2>
 <h3>8.4.1</h3>
 
