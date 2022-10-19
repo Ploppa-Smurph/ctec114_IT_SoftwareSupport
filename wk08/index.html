@@ -59,13 +59,105 @@ Domain controller = contains 'active directory' database,  must be a part of the
 in windows -- system properties 
     there are options to rename computer
                          join workgroup 
-<h3>8.1.5 Manage Active Directory Objects</h3>                         
+<h3>8.1.5 Manage Active Directory Objects</h3>
+tools -> active directory users and computers
+       default it builds: builtin, computers, foreignsecurityprincipals, managed service accounts, and users 'containers'
+   you can define additional: 'orginizational units', the Active Directory Server creates a default 'Domain Controllers' orgizational unit
+   
+orgizational units can perform additional functions than 'containers' in this sense
 
+container objects -  very default in nature - designed to hold the object used by active directory
+orgizational units - contain many user accounts, don't accidently delete it 
+    
+user accounts are the most common active directory objects in an orgizational unit 
+    can make a group and assign users group access
+<h3>8.1.6 Active Directory Facts</h3>
+<b>Active Directory</b> provides the following benefits:
 
+- Centralized resources and security administration—the ability for an administrator to manage and secure the network resources and associated security objects from a single point (the Active Directory database).
+- Single logon for access to global resources—a user created on a domain controller can access (from any computer on the network) any resource on the network that the user has been granted access to.
+- Simplified resource location—Active Directory simplifies access to files and print resources by allowing files and print resources to be published on the network. Once published, a user can search the Active Directory database for the desired resource and securely access it.
 
+Domain- 	A domain is an administratively defined collection of network resources that share a common directory database and common security policies. The domain is the basic administrative unit of an Active Directory structure.
 
+Organizational unit(OU)- 	An organizational unit is like a folder that subdivides and organizes network resources within a domain.
 
+Built-in containers-	Like OUs, generic built-in containers are used to organize Active Directory objects.
 
+Objects-	Within Active Directory, each resource is identified as an object. Common objects include:
+        -Users
+        -Groups
+        -Computers   
+
+You should know the following about objects:
+
+    -Each object contains attributes that include information about the object itself such as a user's name, phone number, and email address. This information is used for locating and securing resources.
+    -Active Directory uses DNS for locating and naming objects.
+    -Container objects hold other objects. These can be either other containers or leaf objects.
+
+Domain controller-  	A domain controller is a Windows server that holds a copy of the Active Directory database.    
+<h3>8.1.7 Create Users Lab</h3>
+<h3>8.1.8 Create OUs Lab</h3>
+<h3>8.1.9 Delete OUs Lab</h3>
+    ** if the OU was created with deletion protection on, then you must:
+        1) go to 'View' in the Active Directory User bar at the top
+        2) choose 'Advanced Options'
+        3) navigate to the OU you want to delete 
+        4) right-click the OU to delete and choose 'properties'
+        5) on the 'object' tab you can uncheck the 'protect from delete'
+        6) apply
+        7) OU can now be deleted by right-clicking and choosing delete; or by selecting and using the 'delete' button on the bar up top 
+<h3>8.1.10 Group Policy</h3>        
+<h3>8.1.11 Use Group Policy</h3>
+  Local group policy vs group policy
+<h3>8.1.12 Group Policy Facts</h3>
+ - You can link GPOs to Active Directory domains and organizational units (OUs). Built-in containers (such as the Computers container) and folders cannot have GPOs linked to them.
+ - A GPO applied to an OU affects the objects in the OU and all sub-OUs.
+ - A GPO applied to a domain affects all objects within all OUs.
+ - A local GPO is stored on a local machine. Computers that are not part of a domain use the Local Group Policy settings to control security settings and other restrictions on the computer.
+ - GPOs are applied in the following order:
+        - In relation to the Local Group Policy on the computer.
+        - In relation to GPOs linked to the domain that contain the user or computer object.
+        - In relation to GPOs linked to the organizational unit(s) that contains the object (from the highest-level OU to the lowest-level OU).
+ - A specific setting in a GPO can be set in the following ways:
+        - Not Configured indicates the GPO has no value for that setting and does not change the current setting.
+        - Enabled indicates the GPO identifies a value to enforce.
+ - Individual settings within all GPOs are combined to form the effective Group Policy setting as follows:
+        - If a setting is defined in one GPO and undefined in another, the defined setting is enforced (regardless of the position of the GPO in the application order).
+        - If a setting is configured in two GPOs, the setting in the last applied GPO is used.
+
+gpedit.msc- 	This command opens the Local Group Policy Editor.
+gpupdate-	This command forces a computer to ask the domain controller for new or updated group policy objectives. These updates usually occur automatically, but on occasion, you may need to force the updates to a computer.
+gpresult- 	This command displays a listing of the group policy objects that have been applied to the computer and the user.        
+<h3>8.1.13 Quiz Facts</h3>
+- The Active Directory structure contains the following components:
+    - A domain is a collection of network resources that share a common directory database.
+    - An organizational unit (OU) is a folder-like container that organizes network resources.
+    - A built-in container is a default container used to organize Active Directory objects. It cannot be deleted.
+    - An object is a resource within Active Directory.
+    - A domain controller is a Windows server that holds a copy of the Active Directory database.
+
+- The Computer Name tab lets you view, change, or join a computer to a domain.
+
+- the branch office in each country is organized similarly, the best recommendation would be to use departmental OUs at the top with office (country) OUs underneath. You could then create resource containers under each office. 
+    You could then easily utilize group accounts to assign resource rights to specific roles departmentally as the company hires more employees.
+
+- network is not growing, a Windows workgroup lets you organize your computers in a peer-to-peer network. This workgroup network lets you share files, internet access, and printers between the five employees.
+
+- Administrative Templates are Registry-based settings that you can configure within a GPO to control a computer system and its overall user experience. They include the ability to do things like control notifications and restrict access to Control Panel features.
+
+- GPOs linked to organizational units that contain this user's object to see where the Hide Programs and Features Page policy might be enabled.
+
+- Each policy can be configured using one of the settings listed below.
+    - Not Configured has no value and does not change the current setting for this policy.
+    - Enabled causes the policy to be enforced.
+    - Disabled prevents the policy from being enforced.
+
+- In this question's scenario, Local Group Policy enables the policy to hide the Programs and Features page. When the Default Domain Policy GPO is applied, this policy is set to Not configured, so it doesn't change anything. When the GPO linked to the user's organizational
+    unit is applied, the setting for this policy is disabled, which reverses the setting in the Local Group Policy and makes the Programs and Features page visible to the user. The Local Group Policy is applied first. GPOs linked to the user's domain are applied second and 
+    take precedence over settings in the Local Group Policy. GPOs linked to the user's organizational unit are applied last and take precedence over any preceding policy settings.    
+
+- The Local Group Policy Editor is the administrative tool you can use to enable local computer behavior policies and the tasks that users are allowed to perform. The policy that turns off the Windows Store application is found under Computer Configuration settings.    
 <h2>8.2</h2>
 <h3>8.2.1</h3>
 
