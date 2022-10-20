@@ -414,12 +414,127 @@ Application data	Data that includes files installed by an application and applic
 - If you just completed a Windows Update, you should first uninstall the Windows Update to see if your computer returns to normal.
 <h2>8.8 Windows Boot Errors</h2>
 <h3>8.8.1 Windows Boot Process</h3>
+<h3>8.8.2 Boot Process Facts</h3>
+BIOS Boot:
+<img src="https://cdn.testout.com/_version_7028/pcpro2022v7-en-us/en-us/resources/text/t_bootordr_pp7/legacy.png" style="width:500px;height:300px;">
+
+UEFI Boot:
+<img src="https://cdn.testout.com/_version_7028/pcpro2022v7-en-us/en-us/resources/text/t_bootordr_pp7/uefi.png" style="width:500px;height:400px;">
 <h3>8.8.4 Configure Boot Order</h3>
+<h3>8.8.6 Windows Boot Options</h3>
+To restart the device to change startup settings, including starting from a disc or USB drive:
+    -Select Start.
+    -Select Settings.
+    -Select System.
+    -Under Recovery options, select Restart now.
+
+Use the following recommendations to troubleshoot startup errors with the advanced boot options.
+   - Boot into Safe Mode and then use the appropriate tool to undo any recent changes. For example, you can:
+        - Use Device Manager to roll back drivers or disable devices that might be causing the problem.
+        - Use Add or Remove Programs to uninstall software that has just been added.
+        - Restore any settings that may have changed.
+        - Disable unneeded services or applications that load at startup.
+        - Use System Restore to restore the system to a known good restore point.
+    - After booting into Safe Mode, begin by undoing the most recent change to the system. For example, if the problem started after installing a new device driver, 
+       roll back the driver and reboot.
+    - If undoing recent changes does not fix the problem, you could disable all unnecessary devices and services. If you can boot normally, you can identify \
+       the component that was causing the problem by enabling devices and services one-by-one until the system becomes unstable.
+<h3>8.8.7 Use the 'bootrec' Command</h3>
+use 'Startup Repair' before trying 'bootrec'
+ <b>bootrec</b> = boot record -- 
+    bootrec /FixMbr - write new master boot record
+    bootrec /FixBoot - write new boot sector 
+    bootrec /ScanOs - scan all disk for installations compatible with windows
+    bootrec /RebuildBcd - scan all disk - choose what to add to boot config
+<h3>8.8.8 Startup Error Facts</h3>
+System does not power on-	If the system does not power on:
+    -Ensure the system is plugged in and the power strip or UPS is turned on.
+    -Check the power switch and the power type (110 or 220 volts) on the back of the power supply.
+    -Make sure the battery is installed (if the computer is a notebook or tablet). Ensure that the AC adapter is plugged in.
+    -Make sure the system case power switch connects to the motherboard (if you have just installed a new system).
+  When you turn on the computer, you should hear both the power supply fan and the CPU fan start to spin.
+
+System powers on, but no display is visible-	If the system powers on but there is nothing on the display, check the following:
+    -Ensure the monitor is connected to the computer, plugged in, and turned on.
+    -Verify that the BIOS/UEFI is configured to use the correct video adapter. You can configure most motherboards to use either the integrated video adapter or a PCIe video adapter installed in an expansion slot.
+    -Verify that the CPU, memory, and a video card are correctly installed. To display startup information on the screen, the computer needs these three components. Other components are not necessary.
+        -If necessary, reduce the system to the three components listed above and try starting the system.
+        -If that does not work, swap out components to identify the failed component.
+  Some computers use a series of beeps to indicate specific problems when messages cannot be shown on the screen. In this case, consult the motherboard documentation for the meaning of the audible messages.
+
+Corrupt MBR or partition table-  The master boot record (MBR) is responsible for locating the system (active) partition and loading the volume boot record (VBR). A corrupt or missing master boot record or a corrupt partition table prevents the system from loading the boot record code, finding the volume boot record, and loading the boot loader program.
+    Symptoms of a corrupt MBR or partition table include:
+        -The system hangs immediately after the BIOS information displays.
+        -Any of the following errors:
+            -MBR corrupt.
+            -Invalid partition table.
+            -Error loading operating system.
+            -Missing operating system.
+  To fix the problem, boot the system from the installation disc and repair the system.
+
+Corrupt boot sector-	The boot sector (also called the volume boot record or volume boot code) is responsible for loading the operating system boot loader program (BOOTMGR).
+    At this point in the process, the MBR has loaded, located an active partition, but there is a problem in loading the VBR: either the VBR does not specify a boot loader program or the boot loader specified in the VBR is missing or corrupt. Symptoms of a corrupt or missing boot sector include:
+        -System hangs following the BIOS information screen.
+        -Any of the following errors:
+            -Non-system disk or disk error.
+            -Remove disks or other media.
+            -Invalid system disk.
+            -Invalid media type.
+            -Disk boot failure.
+            -A disk read error occurred.
+            -BOOTMGR is missing.
+            -Missing GRUB/LILO.
+  To correct the problem, you can check the boot order in the BIOS/UEFI to make sure the system is booting from the correct storage device. Then, boot from the installation disk and repair the system.
+    -A common cause of the non-system disk error is leaving a USB device plugged in. You can avoid these errors by disabling the USB Device option in the boot sequence or setting the integrated USB controller to No Boot.
+
+Inaccessible boot disk- 	The boot loader program uses the boot configuration database (BCD) to locate valid Windows installations to start. If the database points to a location that does not include operating system files, you will see a message similar to the following:
+    "Windows could not start because of a computer disk hardware configuration problem. Could not read from the selected boot disk. Check boot path and disk hardware."
+     -To correct the problem, boot the system from the installation disc and repair the system.
+
+Missing or corrupt file-	If the Boot Manager cannot locate needed operating system files on the selected boot partition, you might see the following errors occur:
+    -Windows could not start because the following file is missing or corrupt: < filename> Please re-install a copy of the above file.
+    -A blue screen error that describes a corrupt or missing file.
+    
+    This problem is caused either by a corrupt disk, corrupt files, or missing files. To correct the problem, boot the system from the installation disc and repair the system.
+
+Blue/black screen or system hangs after Windows splash screen is displayed- 	The most common cause of the errors is bad drivers or corrupt registry settings. To correct the problem, try the following (in this order):
+    -If the error includes any error codes or messages, check the Microsoft website for troubleshooting information.
+    -If you can, boot the system into Safe Mode. In Safe Mode, roll back drivers, remove drivers, or restore to a restore point.
+    -To identify the driver causing the problem, enable boot logging, then read the Ntbtlog.txt file to identify the last driver that the system tried to load.
+    -If you cannot boot into Safe Mode, boot into the Recovery Environment and use System Restore to restore to a restore point created when the system was working correctly.
+
+Service fails to start-	 If a service fails to start, you will see a message such as:
+    "At least one service or driver failed during system startup. Use Event Viewer to examine the event log for details."
+     -Use Event Viewer to view details about the service that did not start. Then try starting the service manually. If necessary, re-enable or re-install the service.
+
+Corrupt or missing DLL or system file-	If you see corrupt or missing DLL or system file errors (either during startup or after Windows starts) boot the system from the installation disc and repair the system.
+
+Device fails to start-	 This message indicates that a hardware device could not be started. Begin by checking Device Manager for information about the device. If necessary, update the driver or disable the device.
 <h3>8.8.9 Trouble Shoot System Startup Lab 01</h3>
 <h3>8.8.10 Trouble Shoot System Startup Lab 02</h3>
 <h3>8.8.11 Trouble Shoot System Startup Lab 03</h3>
 <h3>8.8.12 Trouble Shoot System Startup Lab 04</h3>
 <h3>8.8.13 Startup Error Quiz Facts</h3>
+- During the PEI stage of the UEFI boot process, the CPU and chipset are verified and fully initialized, and system memory is initialized, verified, and allocated.
+
+- On a system using BIOS, the computer powers on, and then the CPU loads the BIOS. The first process to run is the Power-On Self Test (POST).
+
+- disable the driver in Safe Mode instead of rolling the driver back. Although you might be able to disable the driver without booting in Safe Mode, booting in Safe Mode is a good way to prevent drivers that could interfere with your task.
+
+- If undoing recent changes does not fix the problem, you could disable all unnecessary devices and services. If you can boot normally, you can then identify the component that was causing the problem by enabling devices and services 
+   one by one until the system becomes unstable.
+
+- When you choose to enable boot logging, entries are written to the Ntbtlog.txt file. This file is created in the %WinDir% folder.
+
+- If you experience startup errors after you install a new device, the first thing you should do is boot in Safe Mode and roll back the driver.
+
+- The most common cause of the system hanging after the Windows splash screen is displayed is a bad driver or corrupt registry settings. If you cannot boot to Safe Mode, boot into the Recovery Environment and use System Restore.
+
+- The bootrec /fixmbr command writes a Windows-compatible MBR to the system partition. This command does not overwrite the existing partition table. Use this method when you need to resolve MBR corruption issues or when you have to remove non-standard code from the MBR.
+
+- You should verify that the BIOS/UEFI is configured to use the correct video adapter. You can configure most motherboards to use either the integrated video adapter or a PCIe video adapter installed in an expansion slot.
+
+- Symptoms of a corrupt MBR or partition table include the system hanging immediately after the BIOS information is shown and error messages such as missing operating system or MBR corrupt.
 
 
 
