@@ -316,23 +316,95 @@ Generic Routing Encapsulation (GRE)-	GRE is a tunneling protocol developed by Ci
     - Data loss prevention (DLP) programs monitor operations such as file transfers and emails for user activity that could compromise data security.
     - An access control list contains users and groups that are granted access to files, folders, and other resources.
     - Firewalls are usually placed between a company's network and the internet to filter network traffic at the IP level. VPNs are what usually tunnel through these firewalls. In some cases, both functions may be available on one device.    
-<h2>8.5 </h2>
-<h3>8.5.1</h3>
+<h2>8.5 Updates</h2>
+<h3>8.5.1 Updates</h3>
+<h3>8.5.3 Update Facts</h3>
+Operating system updates-	Each operating system includes an update feature that keeps the operating system current. Updates may include fixes for known bugs, patches for known security risks, and the addition of new features.
+
+Driver updates- 	If the hardware manufacturer hasn't registered a driver with Microsoft, updates for the driver aren't made available through the Windows Update service.
+        If this is the case for a device in your system, check the hardware manufacturer's website. It should provide updated versions of the driver that you can download and install. You should always use the latest versions of the drivers for the hardware in your system.
+
+Application updates- For third-party applications, visit the manufacturer's website and check for updates or configure the application to update itself.
+        Many applications include an automatic update feature that periodically goes to the manufacturer's website to see if an update is available. Usually, an automatic update feature will prompt you to download and install updates it finds.
+
+Firmware updates-	Firmware is software embedded in the flash memory of a hardware device. Like all software, the firmware needs to be updated.
+    For update instructions, visit the manufacturer's website. When updating firmware, back up the current system firmware first. Most firmware update utilities provide an option to back up the existing firmware before the update in case something goes wrong.
+<h3>8.5.4 Configure Windows Update Lab</h3>
+<h3>8.5.7 Updates Quiz Facts</h3>
+- Windows Endpoint Configuration Manager manages bandwidth usage and deployment times for updates.
+
+- A hotfix is an operating system patch that targets a specific problem.
+    - A targeted software patch helps describe what a hotfix does, but it is not a type of Windows OS update.
+    - Service packs included a collection of hotfixes and other system updates, but were discontinued after Windows 7.
+
+- The best way to make sure that an application is up to date include the following actions:
+    - Manually check the manufacturer's website regularly for software updates.
+    - Configure the application to automatically download and install updates as they are released.
+
+- If you select the View Your Update History option in the Settings app, you can view a list of Windows updates that have been installed on your system. You also are presented with the option to uninstall an update.
+
+- By default, Windows 11 automatically checks for updates and installs any updates it finds. Although this function can be disabled, Microsoft strongly encourages the use of automatic updates to keep your computer up to date with the latest features. 
+  These updates often include patches to fix security issues found in applications. Automatic maintenance can perform these checks
+
+- WSUS (Windows Server Update Services) approves updates for deployment to specific computers or groups.
+    - Update History lets you access a set of Windows Update logs (such as for driver and feature updates).      
+<h2>8.6 System Backup</h2>
+Backup - An archived copy of data that you can use to restore corrupt or lost data in the event of a hardware or system failure.
+
+System state - Data that includes all the files required to boot and run the computer.
+
+User data	Data that includes all data files saved and modified by users or applications that users run.
+
+Application data	Data that includes files installed by an application and application configuration files.
+<h3>8.6.1 System Backup</h3>
+** Skipping to labs and quizzes **
+<h3>8.6.8 Back Up the Computer Lab</h3>
+<h3>8.6.11 Back Up Quiz Facts</h3>
+- The Time Machine application on macOS computers and the tar command on Linux are used for backups.
+
+- in the scenario will not work because backups created with the Backup and Restore utility can't be stored on the same drive that contains the information being backed up. 
+    To fix this issue, you need to add a second hard disk or external storage device to the system.
+
+- The following are the appropriate descriptions of each listed backup method:
+    -Full - backs up all files (even those that have not changed).
+    -Incremental - backs up every file that has changed since the last full or incremental backup.
+    -Differential - Backs up every file that has changed since the last full backup.
+    -Synthetic - Compares the data found in the last full backup with the current content and uploads only the changes.    
+
+- Backup media should be stored offsite to prevent the same disaster from affecting both the system itself as well as its associated backup media. For example, 
+    if your primary facility is destroyed by flood or fire, your data remains protected at an offsite location.    
+
+- Windows 11 includes a backup service known as File History. With File History, only the data in a user's profile (such as personal files) is backed up. Lily could also add folders to a library to back them
+   up using File History. File History does require a second disk for backup. This backup drive could be a second drive in a computer, a USB-connected drive, or a network drive. Lily could use this feature to 
+   back up her files from her primary drive to her secondary drive, or you could purchase an inexpensive USB drive that she could use to automatically back up her personal files to.    
+
+- File History meets all the requirements for the backup system you need, including only backing up personal data files, the ability to save the data to a flash drive, no compression involved, and the 
+    ability to back up profile files, such as contacts and desktop preferences.   
+
+- Most organizations create a strict rotation schedule for performing full and partial backups. One commonly used rotation scheme is the grandfather-father-son (GFS) backup type. The grandfather is a full backup that is completed once a month or so and stored offsite. It is not an incremental backup store offsite.
+    - The father is a full backup that is completed once a week and stored onsite.
+    - The son is an incremental backup that occurs daily and is kept onsite.    
+
+- If you are unable to boot into Windows, you will be unable to restore a system image. You can, however, use a recovery disc to restore the operating system so that you can then restore the system image.
+
+- The macOS operating system uses the Time Machine backup program.
+<h2>8.7 System Recovery</h2>
+<h3>8.7.1 Windows System Recovery</h3>
+** skipping to labs and quizzes **
+<h3>8.7.3 Create Restore Point Lab</h3>
+<h3>8.7.5 Boot into Windows Recovery Environment</h3>
+<h3>8.7.8 System Recovery Quiz Facts</h3>
 
 
 
-<h2>8.6</h2>
-<h3>8.6.1</h3>
-
-
-
-<h2>8.7</h2>
-<h3>8.7.1</h3>
-
-
-
-<h2>8.8</h2>
-<h3>8.8.1</h3>
+<h2>8.8 Windows Boot Errors</h2>
+<h3>8.8.1 Windows Boot Process</h3>
+<h3>8.8.4 Configure Boot Order</h3>
+<h3>8.8.9 Trouble Shoot System Startup Lab 01</h3>
+<h3>8.8.10 Trouble Shoot System Startup Lab 02</h3>
+<h3>8.8.11 Trouble Shoot System Startup Lab 03</h3>
+<h3>8.8.12 Trouble Shoot System Startup Lab 04</h3>
+<h3>8.8.13 Startup Error Quiz Facts</h3>
 
 
 
