@@ -18,13 +18,99 @@ FAT32 & NTFS
 
 <h3>9.1.2 System File Locations</h3>
 <h3>9.1.3 File Management Facts</h3>
+- The FAT32 file system supports only the following attributes: R, H, S, and A.
+- To change file or folder attributes, edit the properties of the file or folder, or use the Attrib command from the command prompt. (You cannot change permissions with the Attrib command.)
+- When you copy files from an NTFS partition to a FAT32 partition, attributes not available under FAT32 do not remain with the file.
+- Use Folder Options to show protected operating system files, or to show compressed or encrypted files in a different color.
+
+System files = 	%systemroot% or %windir% =	C:\Windows
+Fonts = 	no variable = 	C:\Windows\Fonts
+Program files = %programfiles% = C:\Program Files or C:\Program Files (x86) on 64-bit systems only
+User files (user profiles) =  %userprofile% =	C:\Users\username
+Temporary files (per user) =	%temp% or %tmp% = 	C:\Users\ username\AppData\Local\Temp
 <h3>9.1.4 Manage Files on Windows</h3>
 <h3>9.1.6 Manage Directories from the Command Prompt</h3>
+relative vs absolute path
+  absolute = $ dir D:\work  -> list the drive and folder area
+
+  dir | more  --> scroll with the space bar 
 <h3>9.1.7 Manage Files from the Command Prompt</h3>
 <h3>9.1.8 File Management Commands</h3>
+copy-	Use the copy command to copy files from one location to another. Common switches you can use with copy are:
+    - copy [source] [destination] copies the specified file to the new location.
+    - copy [folder] [*.*] [path] [destination] copies all files with specified extensions in a folder to the new location.
+  Common switches include:
+        /a specifies that the file is an ASCII text file.
+        /b specifies that the file is a binary file.
+        /n copies files using short filenames.
+        /y performs an overwrite operation without prompting you.
+        /v verifies files after they are copied.
+  Moving (copying) files between partitions can affect the file attributes. Be aware of the following:
+        - When copying files from a FAT32 partition to another partition, the file attributes are retained.
+        - When copying files from an NTFS partition to a FAT32 partition, attributes such as encryption and permissions that are not available in FAT32 are removed.
 
+xcopy-	Use the xcopy command to copy files and directory trees. Common switches used with xcopy are:
+        /a copies files with the archive attribute set and doesn't change the attribute.
+        /m copies files with the archive attribute set and turns off the archive attribute.
+        /d copies files changed on or after the specified date. If no date is given, it copies only those files whose source time is newer than the destination time.
+        /p prompts you before creating each destination file.
+        /s copies directories and subdirectories (except empty ones).
+        /e copies directories and subdirectories, including empty ones.
+        /h copies hidden and system files also.
+        /r overwrites read-only files.
+        /k copies attributes. Normal xcopy resets read-only attributes.
+        /y overwrites existing files without prompting.
+
+robocopy-	Use the robocopy (robust file copy) command to copy entire folder structures between volumes or across a network. The benefit of using robocopy is that all NTFS file permissions and attributes are maintained and interrupted transfers can be resumed. Common switches you can use with robocopy are:
+    - robocopy [source_folder] [destination] [options] copies entire folder structures to destination.
+  Common switches include:
+        /s copies subdirectories, excluding empty directories.
+        /e copies subdirectories, including empty directories.
+        /mov moves all specified files and directories. It deletes them from the source when complete.
+        /copyall copies all files attributes and information.
+    * Robocopy is a very powerful copy utility. Use it only if you fully understand how to use it.
+
+attrib- 	Use the attrib command to change or view the attributes of one or more files.
+    - Use the attrib command by itself to display a list of all files in the current directory.
+    - Attributes that can be set or removed are identified by the attribute letter:
+        R—read-only
+        A—archive
+        S—system
+        H—hidden
+        I—not indexed
+  * You cannot encrypt files using the attrib command. Instead, use the cipher command or edit the properties of the file.
+    - Use attrib + to add an attribute to a file. For example, the following command sets the R attribute for the myfile.txt file: attrib +r myfile.txt.
+    - Use attrib - to remove an attribute from a file. For example, the following command removes the R attribute from a file: attrib -r myfile.txt.
+ You can assign or remove multiple attributes at the same time. For example, the following command assigns both R and S attributes to the file: attrib +r +s myfile.txt. You can also change attributes by right-clicking a file and selecting Properties from the menu.
+ <h3>9.1.10 Quiz Facts</h3>
+ - On a 64-bit Windows operating system, all 32-bit programs are installed in the Program Files (x86) directory by default.
+
+ - The Archive (A) attribute identifies whether a file has been modified since the last backup.
+
+ - Only the Read-only (R) attribute is retained (not the Encryption, nor NTFS permissions).
+    * The FAT32 file system only supports the following attributes: R, H, S, and A. When you copy files from an NTFS partition to a FAT32 partition, attributes unavailable under FAT32 do not remain with the file. Moving NTFS files to a non-NTFS partition removes the permissions.
+
+- On Windows 11, user profiles are stored on the system root drive in the Users\username directories. If C: is the system root drive, user profiles are stored in C:\Users\username.
+
+- When you saved the file using the File > Save as feature, you probably deleted or misspelled the file extension. When Mark tried to open the file, his system didn't know which program it should use to open the file. You can easily fix this problem by renaming the file with the
+  correct file extension. As an example, the text file may have been saved as myfile.tzt instead of myfile.txt.
+
+- Use attrib +r -h to add the Read-only attribute and remove the Hidden attribute.  
+
+- The attrib +s +r -a myfile.dll command adds the System file attribute, adds the Read-only attribute, and removes the Archive attribute for myfile.dll.
+
+- Use xcopy /e to copy directories and subdirectories, including empty ones.
+
+- The md (make directory) command creates a directory/folder or subdirectory/subfolder.
+
+- The robocopy (short for robust file copy) command is used to copy entire folder structures between volumes or across a network. The benefit of using robocopy is that interrupted transfers can be resumed. In this scenario, when the janitor plugged the router 
+    back into the outlet, robocopy would have resumed the copy process, and the files would have been copied when you returned the next day.
 <h2>9.2 NTFS and Share Permissions</h2>
+NTFS permissions- 	Permissions used to manage and secure files and folders within an NTFS file system.
+Shared folder- 	A set of files that are made available to other users over a network.
+Share permissions- 	Permissions used to control the level of access users have when accessing files over the network.
 <h3>9.2.1 NTFS and Share Permissions</h3>
+
 <h3>9.2.2 NTFS and Share Permission Facts</h3>
 <h3>9.2.3 Configure Basic Folder Sharing on Windows</h3>
 <h3>9.2.4 Configure Advanced Folder Sharing on Windows</h3>
