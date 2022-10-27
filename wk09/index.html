@@ -112,12 +112,66 @@ Share permissions- 	Permissions used to control the level of access users have w
 <h3>9.2.1 NTFS and Share Permissions</h3>
 
 <h3>9.2.2 NTFS and Share Permission Facts</h3>
+<b>Share Permissions</b>
+Full control	Full control actions are:
+                    - Ownership
+                    - Read
+                    - Write
+                    - Create
+                    - Delete
+                    - Change permissions
+Change	        Change actions are:
+                    - Read
+                    - Write
+                    - Create
+                    - Delete
+Read	        Read actions are:
+                    - Read
+                    - Copy
+                    - Run
+
+<b>NTFS Permissions</b> -- differ from share permissions in several ways: 
+    - Apply to files accessed over the network or locally.
+    - Offer granular control over folders and files.
+    - Can be assigned to system users.
 <h3>9.2.3 Configure Basic Folder Sharing on Windows</h3>
 <h3>9.2.4 Configure Advanced Folder Sharing on Windows</h3>
+\\HOSTNAME\Sharefolder
 <h3>9.2.5 Configure Share and NTFS Permissions</h3>
 <h3>9.2.6 Configure NTFS Permissions</h3>
+<h3>9.2.9 Quiz Facts</h3>
+- By default, Windows automatically creates an administrative share for every volume.
+    -Because administrative shares are not visible when browsing the network, you must use the UNC path to connect to an administrative share. Only members of the Administrators group can access default administrative shares.
+    -Adding a $ sign (not a !) to the end of a share name creates an administrative share.
 
+- Users will have Allow Full Control for both files in the C:\PublicReports folder.
+    -When you move or copy files to an NTFS partition, the files inherit the permissions configured for the parent folders. If you had configured explicit permissions for the files, the moved file would retain the explicit permissions.
+    -Copying files to new folders or partitions removes any existing permissions so that only inherited permissions apply.    
 
+- To prevent Rachel from accessing the singular file, you should assign the user account the Deny Full Control permission for the file. Deny permissions override Allow permissions.
+
+- The C$ administrative share (\\computername\C$) is available to technicians with administrator privileges. This share is the fastest way to transfer a file.
+
+- By creating a network share for Jane's folder that contains her documents, you can grant the managers the ability to see and read these documents. All other employees will not have access if the rights are granted appropriately. If a manager forgets the path, they will still be able to easily find the folder by looking for shared folders on her computer.
+    - Administrative shares are created by the operating system, so you cannot set specific share permissions and file security.
+    - A hidden share is a form of network share that cannot be viewed by others when they are searching for the shared location. These shares are created by adding a dollar sign ($) to the end of the share when it is created. Although this could work for Jane's files, it would require that Jane give the path to each manager. Since Jane wanted to make this process as simple as possible, using a network share would be easier.
+    - A VPN, or virtual private network, allows you to create a secure tunnel between your company network and a remote location over an existing connection, usually the internet. This is not required to share folders with fellow employees on the same local network.
+    - A remote desktop connection gives someone the ability to log on to another computer from their computer. This would not be a suitable solution, as it would be difficult to limit rights.
+
+- Use the net use command to list the currently connected shared folders and drive letters.
+    - ipconfig displays the TCP/IP configuration for network interfaces.
+    - netstat displays protocol connections that have been established by the system as well as which incoming TCP/IP ports are in use.
+    - tracert displays information on the route that a packet takes as it traverses the network to a remote host.    
+
+- Permissions will be removed from both files. Moving or copying files to a non-NTFS partition removes all permissions (FAT32 does not support NTFS permissions).
+   - Moving files to the same NTFS partition preserves the permissions. Copying files to another partition (NTFS or otherwise) removes existing permissions. Copied files on an NTFS partition inherit the permissions assigned to the drive or folder, and copied files on a non-NTFS partition do not inherit permissions because no permissions exist.
+
+- To control both local and network access, you will need to use both NTFS and share permissions.
+    - The folder must be located on an NTFS partition to be able to configure NTFS permissions. Configuring only NTFS permissions will not allow network access. Configuring only shared permissions with the files on a FAT32 partition will not control local access.   
+
+- When you evaluate the interaction between Full Control and NTFS permissions, remember that the most restrictive set of permissions takes precedence. In this case, the NTFS permissions (Read and Write) are more restrictive than the Full Control permission granted to the Everyone group through the share, so the effective permissions are Read and Write.
+
+- The UNC format is \\Servername\Sharename. Use \\Home1\Pictures to access the shared folder.
 <h2>9.3 File Encryption</h2>
 <h3>9.3.1 File Encryption</h3>
 <h3>9.3.2 File Encryption Facts</h3>
