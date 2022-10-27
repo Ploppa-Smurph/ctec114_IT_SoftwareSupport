@@ -179,8 +179,32 @@ Read	        Read actions are:
 <h3>9.3.5 BitLocker</h3>
 <h3>9.3.6 Use BitLocker</h3>
 <h3>9.3.7 BitLocker Facts</h3>
+BitLocker differs from the EFS in the following ways:
+    - BitLocker encrypts the entire volume. EFS encrypts individual files.
+    - BitLocker encrypts the volume for use on the computer, regardless of the user. Any user who has the PIN or startup key and who can successfully log on can access a BitLocker volume. With EFS, only the user who encrypted the file can access the file unless access has been granted to other users.
+    - BitLocker protects files against offline access only. If the computer boots successfully, any authorized user who can log on can access the volume and its data. EFS protects against offline access as well as online access for unauthorized users. EFS does not provide online protection if an authorized user's credentials are compromised.
+<h3>9.3.9 Quiz Facts</h3>
+- EFS encryption is only a feature of the NTFS file system, and thumb drives are normally formatted with FAT32. Because EFS does not work on FAT32 or eFAT, copying an encrypted file from your NTFS volume to a thumb drive means that the file will no longer be encrypted.
+        - Because the file is copied to a FAT32 file system on the thumb drive, the file will no longer be secure and will be completely accessible to anyone.
+        - Encryption cannot be used with compression, which means that the EFS-encrypted file will not be compressed.
 
+- After creating an FEK for the file, EFS then encrypts the FEK through asymmetric encryption by creating a private key and a public key.
 
+- EFS is a Windows file encryption option that encrypts individual files so that only the user who created the file can open it. Decryption is automatic when the file owner opens it. Other users cannot open the encrypted file unless specifically authorized.
+     - BitLocker is a Microsoft security solution that encrypts the entire contents of a hard drive, protecting all files on the disk. BitLocker uses a special key, which is required to unlock the hard disk. You cannot unlock/decrypt a drive simply by moving it to another computer.
+
+- A virtual private network (VPN) uses an encryption protocol (such as IPsec, PPTP, or L2TP) to establish a secure communication channel between two hosts (or between one site and another site). Data that passes through the unsecured network is encrypted and protected.
+
+- When you implement BitLocker on a hard drive and store the startup key in the TPM chip, you can boot the hard drive without providing the startup key. You do not need to provide the key before booting or a USB drive with the key on the drive.
+
+- BitLocker is designed to protect files against offline access only.
+
+- BitLocker To Go provides drive encryption for removable data drives, including USB flash drives. You can use BitLocker To Go to encrypt the data on a flash drive. The only way to decrypt the data on the flash drive is through the recovery password. Using BitLocker To Go and not sharing the recovery password would keep the data on the flash drive secure.
+
+- A Trusted Platform Module (TPM) is a special hardware chip included on a computer's motherboard that contains software (within the firmware) that generates and stores cryptographic keys.
+
+- BitLocker checks the integrity of the early boot components and the boot configuration data by using the Trusted Platform Module (TPM) to ensure that the data is accessible only when the computer's boot components appear unaltered. Also, the encrypted disk must be in the same computer it was in when it was originally encrypted with BitLocker. 
+   This means that if someone were to obtain that hard drive and put it in a different computer, they wouldn't be able to access the data on that drive. The data stays encrypted.
 <h2>9.4 Linux File Management</h2>
 <h3>9.4.1 Use Linux Shell Commands</h3>
 <h3>9.4.2 Linux Shell Facts</h3>
