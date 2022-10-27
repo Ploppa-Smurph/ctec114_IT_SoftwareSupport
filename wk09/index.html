@@ -206,15 +206,202 @@ BitLocker differs from the EFS in the following ways:
 - BitLocker checks the integrity of the early boot components and the boot configuration data by using the Trusted Platform Module (TPM) to ensure that the data is accessible only when the computer's boot components appear unaltered. Also, the encrypted disk must be in the same computer it was in when it was originally encrypted with BitLocker. 
    This means that if someone were to obtain that hard drive and put it in a different computer, they wouldn't be able to access the data on that drive. The data stays encrypted.
 <h2>9.4 Linux File Management</h2>
+File system - 	A system that organizes a computer's files on a hard drive.
+man utility_name -  	A utility used at the shell prompt to view the syntax along with the options that can be used.
+Second Extended Filesystem (ext2) -  	One of the oldest Linux file systems.
+Third Extended Filesystem (ext3) -  	An updated version of ext2 that supports journaling.
+Fourth Extended Filesystem (ext4) -	 The fourth-generation file system in the ext file system family.
+swap -	 A file system used for virtual memory.
+Network File System (NFS) - 	A distributed file system used for file sharing on Unix and Linux.
+Virtual File Allocation Table (VFAT) -  	A FAT32 file system for Linux.
+Extended File System (XFS) - 	High performing and flexible file system.
+B Tree File System (Btrfs) - 	A Linux file system with copy-on-write functions. Sometimes referred to as butter FS or better FS.
 <h3>9.4.1 Use Linux Shell Commands</h3>
 <h3>9.4.2 Linux Shell Facts</h3>
+pwd -  Displays the path of the current directory on the screen. pwd stands for print working directory.
+
+ip - Displays or changes IP configuration settings.
+
+ls - Displays a list of files and subdirectories that exist within a directory. Several options are commonly used with this command:
+    -a displays all files, including hidden files.
+    -l displays a detailed (long) listing of directory contents, including ownership, permissions, modification dates, and file sizes.
+    -R displays the contents of the directory and all of its subdirectories.
+
+--help - Displays a brief summary of how to use the command.
+
+bash - Starts a new Bourne-again shell (bash) session.
+
+man - Displays the manual page for a command. It's very similar to the help screen, but it provides more detail. Use the Q key to quit and go back to the shell prompt.
+
+info - Displays more extensive documentation about the command. Use the Q key to quit and go back to the shell prompt.
+
+cd - Changes directories in the file system. For example, to change to the /home directory in the file system, you would enter cd /home at the shell prompt.
+
+cp - Copies files and directories from one location in the file system to another. For example, to copy the widget.odt file to the /home/rsmith directory, you would enter cp widget.odt /home/rsmith at the shell prompt.
+    To copy an entire directory structure, include the -R option, which specifies that the directory contents be recursively copied.
+
+mv - Moves and/or renames files and directories from one location or name to another. For example, to move the widget.odt file in your current working directory to the /home/rsmith directory, you would enter mv widget.odt /home/rsmith at the shell prompt. Before moving it, you could rename it to newwidget.odt by entering mv widget.odt newwidget.odt or, alternatively, you could rename and move it simultaneously by entering mv widget.odt /home/rsmith/newwidget.odt.
+
+rm - Deletes files and directories from the file system. For example, to delete the widget.odt file, you would enter rm widget.odt at the shell prompt.
+
+cat - Displays the contents of a text file on the screen. For example, to view the contents of the widget.txt file, you would enter cat widget.txt at the shell prompt.
+
+less - Displays the contents of a text file on the screen, pausing the output one screen at a time. For example, to view the contents of the widget.txt file one page at a time, you would enter less widget.txt at the shell prompt.
+
+head - Displays the first few lines of a text file on the screen. For example, to view the first lines of the widget.txt file, you would enter head widget.txt at the shell prompt.
+
+tail - Displays the last few lines of a text file on the screen. For example, to view the last lines of the widget.txt file, you would enter tail widget.txt at the shell prompt.
+    - The -f option can be used with tail to monitor a file for changes. If new content is added to the end of the file (such as a log file), the new lines will be displayed on the screen.
+
+vi/vim - Edits the contents of a text file. Current Linux systems use vim (an improved version of vi). Executing the vi command will launch the vim executable. The vi uses four different operating modes:
+Command mode
+    - Command line mode
+    - Insert mode
+    - Replace mode
+    For example, to edit the contents of the widget.txt file, you would enter vi widget.txt at the shell prompt. You would then press the i key to enter Insert mode and make the necessary changes to the file. When done editing the file, you would press the Esc key to enter command mode. Then you would press the : key to enter command line mode where you would enter exit or wq (for write and quit) to save your changes and exit the vi editor.
+
+su - Allows you to switch user accounts.
+    su - (su with a space and a hyphen) is used to switch to the root user with the home directory and environment variables assigned to the root user.
+
+shutdown - Shuts down or reboots the system in a secure manner. The syntax of the shutdown command is shutdown -h|-r +m message. The options for the shutdown command include:
+    +m specifies when to perform the shutdown operation. m is the amount of time (specified in minutes).
+    -h instructs the system to shut down and power down.
+    -r instructs the system to reboot after the shutdown.
+    -p powers off the machine.
+    -message specifies a message that is sent to all users that accompanies the standard shutdown notification.
 <h3>9.4.4 Manage the Linux File System</h3>
 <h3>9.4.5 View File Contents</h3>
 <h3>9.4.6 Edit File Contents</h3>
 <h3>9.4.7 Manage Ownership and Permissions</h3>
 <h3>9.4.8 Linux File Management Facts</h3>
+Second Extended Filesystem (ext2)-	ext2 is one of the oldest Linux file systems still available.
+        - ext2 stores data in a standard directory and file hierarchy.
+        - It supports a 2 TB maximum file size.
+        - An ext2 volume can be up to 4 TB in size.
+        - File names can be 255 characters long.
+        - ext2 supports Linux users, groups, and permissions.
+        - It does not use journaling (which is used in most modern file systems). As a result, recovery takes a long time if the system shuts down abruptly.
 
+Third Extended Filesystem (ext3)- 	ext3 is an updated version of ext2 that supports journaling. Key points include:
+        - Before committing a transaction to a storage device, the ext3 file system records the transaction to the journal and marks it as incomplete.
+        - After the disk transaction is complete, the file system marks the transaction as complete in the journal.
+        - Journaling allows ext3 to track of the most recent file transactions and indicates if they were completed.
+        - Journaling allows ext3 to recover much more quickly than ext2 in the event of an unclean system shutdown.
 
+Fourth Extended Filesystem (ext4)- 	ext4 includes all features found with ext2 and ext3. It also:
+        - Supports file sizes up to 16 TB and disk sizes up to 1 exabyte (EB).
+        - Allows for up to four billion files in the file system.
+        - Uses checksums to verify the integrity of the journal file.
+            * Checksums help improve the overall reliability of the system because the journal file is the most heavily used file of the disk.
+
+swap- 	 A swap file system is used as virtual memory (the portion of the hard disk used to temporarily store portions of main memory) by the operating system.
+            * A recommended practice is to make the swap file size between 1 and 1.5 times the amount of memory on the computer.
+
+Compact Disc File System (CDfs)- 	CDfs is a virtual Linux file system that provides access to individual data and audio tracks on compact discs (CDs). A compact disc mounted with the CDfs driver appears as a collection of files, each representing a single track.
+
+Network File System (NFS)-  	NFS is a distributed file system protocol that allows a user on a client computer to access files over a computer network much like local storage is accessed.
+
+New Technology File System (NTFS)-  	Microsoft operating systems use NTFS. Linux provides limited support for NTFS.
+
+Virtual File Allocation Table (VFAT)-  	VFAT is a FAT32 file system for Linux. VFAT
+        - Does not support journaling.
+        - Includes long name support.
+        - Requires support for VFAT to be compiled into the kernel for the system to recognize the VFAT format.
+
+Extended File System (XFS)- 	XFS was developed for the Silicon Graphics IRIX operating system. An XFS file system:
+        - Proficiently handles large files.
+        - Offers smooth data transfers.
+        - Provides journaling.
+        - Can reside on a regular disk partition or on a logical volume.
+
+B Tree File System (Btrfs)- 	Btrfs is a Linux file system that uses a copy-on-write file system. Using copy-on-write technology, Btrfs provides several key features not found in earlier file systems:
+    - Storage pools—Btrfs allows you to create storage pools from the storage devices in the system.
+        - From the storage pool, you can allocate space to specific storage volumes.
+        - You mount storage volumes at mount points in the file system.
+    - Snapshots—The snapshot functionality provided by Btrfs protects data.
+        - You can configure it to take snapshots of data at specified intervals and save it on separate media.
+        - If a file gets lost or corrupted, you can restore a previous version of the file from a snapshot.
+
+<b>Additional Commands</b>
+head - 	Displays the first few lines of a text file on the screen. For example, to view the first lines of the widget.txt file, you enter 'head widget.txt' at the shell prompt.        
+
+chown -	Changes the user or group that owns a file or directory. For example, to change the owner of the widget.txt file to the mlanders user, enter 'chown lmanders widget.txt'.
+
+chgrp - Changes the group that owns a file or directory. For example, to change the group that owns the widget.txt file to the RandD group, enter 'chgrp RandD widget.txt'.
+
+chmod - There are several ways you can use the chmod command to modify the permissions assigned to a file or directory. Syntax options include:
+    chmod entity= permissions filename
+        - Entity can be:
+            - u for Owner
+            - g for Group
+            - o for Others
+        - Permission can be:
+            - r for read
+            - w for write
+            - x for execute
+    chmod entity+/- permissions filename
+        - Entity can be:
+            - u for Owner
+            - g for Group
+            - o for Others    
+        - Permission can be:
+            - r for read
+            - w for write
+            - x for execute
+     -r chmod 3-digit_numeric_permission filename. The digits assign permissions as follows:
+            - 1 for Owner
+            - 2 for Group
+            - 3 for Others
+
+dd -   Copies file system data using records. It can copy files, directories, partitions, or even entire hard disks. For example, to copy a disk partition to a file on a removable USB drive, use the syntax:
+        - dd if=/dev/sdb1 of=/media/usb/partition.bak  
+<h3>9.4.9 Linux Permissions Lab</h3>                  
+Complete this lab as follows:
+
+1)View the current rights for the /sales directory.
+    -From the Favorites bar, select Terminal.
+    -At the Terminal prompt, type CD / and then press Enter to go to the root of the system.
+    -Type ls -l and then press Enter.
+    -From the upper right, select Answer Questions.
+    -Answer Question 1.
+2)Give Other the rights needed to browse the /sales directory.
+    -At the prompt, type chmod o+rx /sales and then press Enter to enable the Other group to browse the /sales directory.
+    -Type ls -l and then press Enter to verify the change.
+        * Notice that the /sales directory now has the read and execute (r-x) permission. The read and execute permissions are necessary to see the directory and list its contents.
+3)Give Other the permissions to read all documents in the /sales directory.
+    - From the prompt, type ls -l /sales and then press Enter.
+    - From the upper right, select Answer Questions.
+    - Answer Question 2.
+    - At the prompt, type chmod o+r /sales/* and press Enter to allow the Other group to read all documents in the /sales directory.
+    - Type ls -l /sales and press Enter.
+        * Notice that Other now has read permissions (r--) for all documents in the /sales directory.
+    - Select Score Lab.
+<h3>9.4.10 Lab</h3>  
+1) Give the bcassini user ownership of the /hr/payroll file.
+    - From the Favorites bar, select Terminal.
+    - At the Terminal prompt, type chown bcassini /hr/payroll and press Enter to give bcassini ownership of the /hr/payroll file.
+    - Type ls -l /hr and press Enter to verify the change in ownership.  
+<h3>9.4.11 Quiz Facts</h3>
+- The bash command opens a Bourne-Again Shell (Bash) session. Bash is the standard shell used in most Linux computers.
+
+- The ip or ifconfig command displays the IP addresses and subnet masks that are assigned to each network interface on a Linux system.
+
+- Entering man cat displays the manual page for the cat command. This command is very similar to the help screen, but provides more detail.
+
+- The pwd command displays the present working directory.
+
+- The correct answer is the shutdown -h +10 message command, which will shut down and power down the system 10 minutes after displaying the message to all users.
+
+- The chmod command modifies the permissions on a files and defines who can access the file and the mode by which the file can be accessed.
+
+- The grep command is used to search text. The technician could save the output of the ps command in a text file and then search the files, or the technician could pipe the output from the ps command into the grep command.
+
+- At the Command Prompt, enter the su - command so that the system will switch you to the root user and require you to enter the root password. You will then be able to perform tasks that require root user administrative
+   privileges. After completing these tasks, you should log out as the root user and return to the standard user account.
+
+- Both tail and cat are suited for this task. The tail command prints out the last 10 lines of a file by default. The cat command prints out the contents of a file.   
+
+-In the vi editor, you need to switch to Insert Mode to be able to type new text in the file and have existing text that comes after the cursor pushed down.
 <h2>10.1 Peripheral Devices</h2>
 <h3>10.1.1 Peripheral Devices</h3>
 <h3>10.1.2 Peripheral Device Facts</h3>
