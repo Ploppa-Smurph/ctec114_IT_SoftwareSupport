@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTEC-114 wk 10 Ch 11 Networking</title>
+</head>
+<body>
+<h1>CTEC-114 wk 10 Ch 11 Networking</h1>    
+<pre>
+    Some of this Chapter was completed in CTEC-112
+<h3>11.6.8 Quiz Facts</h3>
+- Manufactures often accompany a vulnerability notification with firmware updates to address the vulnerability. You should apply these updates immediately.
+
+- Poor VoIP performance is likely due to insufficient bandwidth to support both video streaming and VoIP calls. Changing the router's QoS settings to give a higher priority to VoIP traffic will most likely improve VoIP performance.
+
+- The first security consideration on a router is to change the default password.
+    * Disabling the SSID broadcast may be desirable for added security, but this is not the first action you should take.
+    * Adjusting the radio power levels limits the broadcast area and may be desirable for added security, but this is not the first action you should take.
+
+- MAC address filtering allows or rejects client connections by hardware address.
+
+- Parental controls or content filters restrict or block specific web traffic based on keyword, URL, or time of day.
+
+- Access to the smart home control system from the internet through the SOHO router is most likely achieved with port forwarding.
+
+- Configure NAT to translate the private IP addresses on the local network to public IP addresses on the internet. Doing this will most likely restore internet connectivity in this scenario.
+
+- Wireless devices use the SSID (service set identifier) to identify the network name. All devices on a wireless network use the same SSID.
+
+- Other wireless transmitting devices (such as cordless phones or microwaves) and generators cause interference for wireless access points.
+
+- The Private network location is designed for use on networks where all other users and devices are known and trusted. The Private network location has the characteristics listed below.
+    - Network discovery is enabled. This means that other computers and devices on the network are able to see and connect to each other.
+    - Files and printers can be easily shared between connected devices.
+    - Windows Firewall is automatically configured to allow certain types of network communication through.
+<h3>11.8.10 Lab: Use the Linux 'ip' command</h3>
+1)Determine which network interface went down when the Ethernet cable was unplugged.
+    -- From the Favorites bar, select Terminal.
+    -- From the Terminal prompt, run any of the following commands. Press Enter after typing in the chosen command.
+        - ip addr
+        - ip addr show
+        - ip addr show enp2s0
+        - ip ifconfig -a
+2)Start the network interface from the command line and verify that it is up.
+    -- From the Terminal prompt, run any of the following commands. Press Enter after typing in the chosen command.
+        - ifup enp2s0
+        - ip link set enp2s0
+    -- From the Terminal prompt, run any of the following commands. Press Enter after typing in the chosen command.
+        - ip addr
+        - ip addr show
+        - ip addr show enp2s0
+        - ifconfig -a
+<h3>11.8.11 Lab: ipconfig /all</h3>
+<h3>11.8.12 Lab: ipconfig part 02</h3>
+<h3>11.8.13 Lab: ipconfig part 03</h3>
+<h3>11.8.14 Quiz: Facts</h3>
+- ipconfig /all 
+  ipconfig /flushdns
+
+- ipconfig /flushdns
+
+- netstat shows IP-related statistics, including:
+    - Incoming and outgoing connections.
+    - Active sessions, ports, and sockets.
+    - The local routing table.
+            * ipconfig displays IP configuration information for network adapters. Use ipconfig to view the IP address, subnet mask, and default gateway configuration.
+            * nslookup resolves (looks up) a hostname's IP address.
+
+- ipconfig displays IP configuration information for network adapters.
+ - ping sends an ICMP echo request/reply packet to a remote host. A response from the remote host indicates that both hosts are correctly configured and a connection exists between them. Using ping -t performs a continuous connection test (press Ctrl+C to stop sending the ping requests).
+ - tracert is similar to the ping utility in that it tests connectivity between devices. However, tracert also shows the routers in the path between the two devices. Responses from each hop on the route are measured three times to provide an accurate representation of how long the packet takes to reach and return from the specific host.
+ - nslookup resolves (looks up) the IP address of the specified hostname. This command also displays additional name resolution information, such as the DNS server used for the lookup request.
+ - netstat displays the following IP-related statistics:
+    - Current connections
+    - Incoming and outgoing connections
+    - Active sessions, ports, and sockets
+    - The local routing table            
+
+- The output is from a tracert command run on a Windows Server system. The tracert command provides information on each step in the route that a packet takes to reach a remote host. Responses from each hop on the route are measured three times to provide an accurate representation of how 
+   long the packet takes to reach and return from that host. This information can be useful in locating congestion points on a network or when verifying that network routing is operating as expected.
+
+- a ping test to the IP address of the website succeeds, while accessing the website through the browser does not work. Users type hostnames in the browser to go to websites, and hostnames must be translated to IP addresses by a DNS server.
+
+- You can use ipconfig /renew to request new IP configuration information from the DHCP server.
+
+- On an IP-based network, you can use the ping command to check connectivity between a source and destination computer.
+    - You can also use tracert on a Windows system to check the routing path between two hosts. The tracert command performs the same function as ping, but includes the path information.
+
+- tracert shows you the series of routers that are used between the source and destination computers. If a router is not functioning, tracert can help you find which router is not working by showing you the last router the command was able to contact.    
+
+- Use ipconfig /all to view detailed network configuration information. The /all switch shows additional information not shown by using ipconfig alone.
+</pre>
+</body>
+</html>
