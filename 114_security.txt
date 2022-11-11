@@ -44,13 +44,15 @@ Use the Internet to find an article or case study on a major data breach.
 
 7.Any additional information that you found to be relevant/interesting. 5 Points
 	
-	- the reason i was interested in this particular breach is that in one of my classes we had to setup a linkedin profile. i have since updated the profile with my certifications and some updates. i was concerned because many students will have been affected by this data breach, no only from bpcc, but internationally.
-
-	tools such as PhishingQuiz with Google (https://phishingquiz.withgoogle.com) are an excellent example of this. More comprehensive training solutions like KnowBe4, which offers information security awareness training, can help educate the employees by increasing their knowledge on how hackers steal data from the workplace.
+	- the reason i was interested in this particular breach is that in one of my classes we had to setup a linkedin profile. i have since updated the profile with my 	certifications and some updates. i was concerned because many students will have been affected by this data breach, no only from bpcc, but internationally.
 
 	in April of 2022 a company named HiQ was permitted, by the courts, to continue to legally use scrapping of Linkedin user data. 
 
 		"HiQ uses data scraped from public sections of LinkedIn to create reports for corporate customers, identifying which of their employees are most likely to quit 			and which are most likely to be targeted by recruiters."
+
+	- while researching this project i saw that there are various sites stating you can download applications that will scrape user data from various social media sites and 	even giving reviews of which are the best to use for what information you are looking to retrieve. 
+
+	- many business' use tools such as 'PhishingQuiz with Google' (https://phishingquiz.withgoogle.com) are an excellent example of this. More comprehensive training 	solutions like 'KnowBe4', which offers information security awareness training, can help educate the employees by increasing their knowledge on how hackers steal data 	from the workplace.
 
 
 8.Give your source of reference. 5 Points
