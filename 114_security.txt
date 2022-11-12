@@ -6,7 +6,7 @@ Use the Internet to find an article or case study on a major data breach.
 
 2.Describe the breach (who, what, when, where, why).  20 Points
 
-	who:  A hacker going by the moniker of “God User” -- username “TomLiner”??
+	who:  A hacker going by the moniker of “GOD user” -- username “TomLiner”??
 	what: Used data scraping techniques by exploiting the site’s (and others’) API before dumping a first information data set of around 500 million customers. 
 			- LinkedIn’s API (Application Programming Interface) was misused by a third party to gain access to the personal data of millions of users. The misuse 				of this API opens up potential security risks for many people and companies who use LinkedIn as their primary platform for business connections. 					LinkedIn said it had taken steps to remedy the situation.  
 	when: June 2021
@@ -38,17 +38,17 @@ Use the Internet to find an article or case study on a major data breach.
 
 6.What could the company have done differently/better to either prevent the breach or in response to the breach? 10 Points
 	
-	alerting users about the data leak and ask everyone to change their password at next login. they could have better hidden personal information, even if it is not sensitive information.	
+	alerting users about the data leak and ask everyone to change their password at next login, which might look like phishing. they could have better hidden personal information, even if it is not sensitive information.	
 
-	Linkedin has setup models that search for and limit scrapping apps and tools, but in a blog post on the Linkedin website, they warn users to keep any personal information from their public Linkedin page. When you create a new Linkedin page the site still asks for some of the same information that they warn against including, so you must be careful. 
+	Linkedin has setup models that search for and limit scrapping apps and tools, but in a blog post on the Linkedin website, they warn users to keep any personal information from their public Linkedin page. 
+	When you create a new Linkedin page the site still asks for some of the same information that they warn against including, so you must be careful. 
 
 7.Any additional information that you found to be relevant/interesting. 5 Points
 	
 	- the reason i was interested in this particular breach is that in one of my classes we had to setup a linkedin profile. i have since updated the profile with my 	certifications and some updates. i was concerned because many students will have been affected by this data breach, no only from bpcc, but internationally.
 
 	in April of 2022 a company named HiQ was permitted, by the courts, to continue to legally use scrapping of Linkedin user data. 
-
-		"HiQ uses data scraped from public sections of LinkedIn to create reports for corporate customers, identifying which of their employees are most likely to quit 			and which are most likely to be targeted by recruiters."
+		"HiQ uses data scraped from public sections of LinkedIn to create reports for corporate customers, identifying which of their employees are most likely to quit and which are most likely to be targeted by recruiters." -1
 
 	- while researching this project i saw that there are various sites stating you can download applications that will scrape user data from various social media sites and 	even giving reviews of which are the best to use for what information you are looking to retrieve. 
 
@@ -56,10 +56,10 @@ Use the Internet to find an article or case study on a major data breach.
 
 
 8.Give your source of reference. 5 Points
-	- https://www.csoonline.com/article/2130877/the-biggest-data-breaches-of-the-21st-century.html
-	- https://news.linkedin.com/2021/june/an-update-from-linkedin
-	- https://blog.linkedin.com/2021/july/15/linkedin-safety-series-what-is-scraping
-	- https://cybernews.com/news/stolen-data-of-500-million-linkedin-users-being-sold-online-2-million-leaked-as-proof-2/
-	- https://scrubbed.net/blog/linkedin-data-leak-what-we-can-do-about-it/
-	- https://www.forbes.com/sites/zacharysmith/2022/04/18/scraping-data-from-linkedin-profiles-is-legal-appeals-court-rules/?sh=77339fbd2a9c
+	1- https://www.csoonline.com/article/2130877/the-biggest-data-breaches-of-the-21st-century.html
+	2- https://news.linkedin.com/2021/june/an-update-from-linkedin
+	3- https://blog.linkedin.com/2021/july/15/linkedin-safety-series-what-is-scraping
+	4- https://cybernews.com/news/stolen-data-of-500-million-linkedin-users-being-sold-online-2-million-leaked-as-proof-2/
+	5- https://scrubbed.net/blog/linkedin-data-leak-what-we-can-do-about-it/
+	6- https://www.forbes.com/sites/zacharysmith/2022/04/18/scraping-data-from-linkedin-profiles-is-legal-appeals-court-rules/?sh=77339fbd2a9c
  
