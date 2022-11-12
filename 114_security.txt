@@ -2,38 +2,38 @@ Use the Internet to find an article or case study on a major data breach.
 
 1.What company(s) did the data breach involve? 10 Points
 	
-	--Professional networking giant LinkedIn
+	--Professional networking giant LinkedIn -1 
 
 2.Describe the breach (who, what, when, where, why).  20 Points
 
-	who:  A hacker going by the moniker of “GOD user” -- username “TomLiner”??
+	who:  A hacker going by the moniker of “GOD user” -- username “TomLiner”?? 
 	what: Used data scraping techniques by exploiting the site’s (and others’) API before dumping a first information data set of around 500 million customers. 
 			- LinkedIn’s API (Application Programming Interface) was misused by a third party to gain access to the personal data of millions of users. The misuse 				of this API opens up potential security risks for many people and companies who use LinkedIn as their primary platform for business connections. 					LinkedIn said it had taken steps to remedy the situation.  
 	when: June 2021
 	where: dumped information on Dark Web forum
-	why: boast that they were selling the full 700 million customer database.
+	why: boast that they were selling the full 700 million customer database.  -1, 5
 
 
 3.How many victims were involved (i.e. how many people’s personal data were compromised)?  10 Points
 
-	- data associated with 700 million of its users posted on a dark web forum in June 2021, impacting more than 90% of its user base
+	- data associated with 700 million of its users posted on a dark web forum in June 2021, impacting more than 90% of its user base -1, 2
 
 4.What damage was caused by the breach?  10 Points
 
-	-   a scraped data sample posted by 'God User' contained information including email addresses, phone numbers, geolocation records, genders and other social media 				details, which would give malicious actors plenty of data to craft convincing, follow-on social engineering attacks in the wake of the leak
+	-   a scraped data sample posted by 'God User' contained information including email addresses, phone numbers, geolocation records, genders and other social media details, which would give malicious actors plenty of data to craft convincing, follow-on social engineering attacks in the wake of the leak
 
 		- Carrying out targeted phishing attacks.
 		- Spamming 500 million emails and phone numbers.
-		- Brute-forcing the passwords of LinkedIn profiles and email addresses.
+		- Brute-forcing the passwords of LinkedIn profiles and email addresses. -1, 2, 4
 
 
 5.What did the company do to respond to the breach? 10 Points
 
 	- LinkedIn argued that as no 	sensitive, private personal data was exposed, the incident was a violation of its terms of service rather than a data breach.
 	
-		"Our initial investigation has found that this data was scraped from LinkedIn and other various websites and includes the same data reported earlier this year in 	our April 2021 scraping update.
+		"Our initial investigation has found that this data was scraped from LinkedIn and other various websites and includes the same data reported earlier this year in our April 2021 scraping update.
 
-		Members trust LinkedIn with their data, and any misuse of our members’ data, such as scraping, violates LinkedIn terms of service. When anyone tries to take 	member data and use it for purposes LinkedIn and our members haven’t agreed to, we work to stop them and hold them accountable."
+		Members trust LinkedIn with their data, and any misuse of our members’ data, such as scraping, violates LinkedIn terms of service. When anyone tries to take member data and use it for purposes LinkedIn and our members haven’t agreed to, we work to stop them and hold them accountable."   -1, 2, 3
 
 
 6.What could the company have done differently/better to either prevent the breach or in response to the breach? 10 Points
@@ -41,18 +41,18 @@ Use the Internet to find an article or case study on a major data breach.
 	alerting users about the data leak and ask everyone to change their password at next login, which might look like phishing. they could have better hidden personal information, even if it is not sensitive information.	
 
 	Linkedin has setup models that search for and limit scrapping apps and tools, but in a blog post on the Linkedin website, they warn users to keep any personal information from their public Linkedin page. 
-	When you create a new Linkedin page the site still asks for some of the same information that they warn against including, so you must be careful. 
+	When you create a new Linkedin page the site still asks for some of the same information that they warn against including, so you must be careful.   -3, 
 
 7.Any additional information that you found to be relevant/interesting. 5 Points
 	
 	- the reason i was interested in this particular breach is that in one of my classes we had to setup a linkedin profile. i have since updated the profile with my 	certifications and some updates. i was concerned because many students will have been affected by this data breach, no only from bpcc, but internationally.
 
 	in April of 2022 a company named HiQ was permitted, by the courts, to continue to legally use scrapping of Linkedin user data. 
-		"HiQ uses data scraped from public sections of LinkedIn to create reports for corporate customers, identifying which of their employees are most likely to quit and which are most likely to be targeted by recruiters." -1
+		"HiQ uses data scraped from public sections of LinkedIn to create reports for corporate customers, identifying which of their employees are most likely to quit and which are most likely to be targeted by recruiters." -6
 
-	- while researching this project i saw that there are various sites stating you can download applications that will scrape user data from various social media sites and 	even giving reviews of which are the best to use for what information you are looking to retrieve. 
+	- while researching this project i saw that there are various sites stating you can download applications that will scrape user data from various social media sites and even giving reviews of which are the best to use for what information you are looking to retrieve. 
 
-	- many business' use tools such as 'PhishingQuiz with Google' (https://phishingquiz.withgoogle.com) are an excellent example of this. More comprehensive training 	solutions like 'KnowBe4', which offers information security awareness training, can help educate the employees by increasing their knowledge on how hackers steal data 	from the workplace.
+	- many business' use tools such as 'PhishingQuiz with Google' (https://phishingquiz.withgoogle.com) are an excellent example of this. More comprehensive training 	solutions like 'KnowBe4', which offers information security awareness training, can help educate the employees by increasing their knowledge on how hackers steal data 	from the workplace.  -5
 
 
 8.Give your source of reference. 5 Points
