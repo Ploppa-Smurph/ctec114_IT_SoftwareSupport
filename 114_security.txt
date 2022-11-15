@@ -41,7 +41,7 @@ Use the Internet to find an article or case study on a major data breach.
 	alerting users about the data leak and ask everyone to change their password at next login, which might look like phishing. they could have better hidden personal information, even if it is not sensitive information.	
 
 	Linkedin has setup models that search for and limit scrapping apps and tools, but in a blog post on the Linkedin website, they warn users to keep any personal information from their public Linkedin page. 
-	When you create a new Linkedin page the site still asks for some of the same information that they warn against including, so you must be careful.   -3, 
+	.   -3, 
 
 7.Any additional information that you found to be relevant/interesting. 5 Points
 	
