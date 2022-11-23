@@ -115,20 +115,54 @@ The only answer that satisfies this requirement is a fingerprint (something you 
 - Security guards can provide a high level of security inside and outside the property. They should be stationed at the entrance(s). The guards should have an access list
   that states who is allowed onto the property.
 
--   
+- In this scenario, the WAP should be installed on the ceiling or in a special locked box to prevent unauthorized access.
 <h2>14.4 Logical Security Measures</h2>
 <h3>14.4.1 Logical Security Measures</h3>
 <h3>14.4.2 Logical Security Measures Facts</h3>
 <h3>14.4.3 Configure a Screen Saver Password</h3>
-<h3>14.4.4 Lab</h3>
+<h3>14.4.4 Screen Saver Lab</h3>
 <h3>14.4.5 Elevate Privileges on Linux</h3>
+su = switch user -- 'root' default
 <h3>14.4.6 Configure Password Policies on Windows</h3>
-<h3>14.4.7 Lab</h3>
-<h3>14.4.8 Lab</h3>
+Local Security Policy
+- set number of login attempts
+- require strong password (length and symbols)
+<h3>14.4.7 Enforce Password Strength Windows Lab</h3>
+<h3>14.4.8 Manage Linux Password Lab</h3>
 <h3>14.4.9 Manage Authentication on Windows</h3>
 <h3>14.4.10 Use Window Certificate Manager</h3>
 <h3>14.4.11 Quiz Facts</h3>
+- Access control lists (ACLs) are used to manage and enforce what a user is authorized to access.
 
+- Authorization defines which resources a user is able to access once he or she is authenticated.
+
+- Authentication is the process by which users provide credentials to prove their identity.
+
+- Hard tokens provide a higher level of security, but if the token is lost or stolen, the 
+  security breach can be quite severe. Implementing hard tokens can also be expensive and
+  time-consuming. They are generally reserved for highly sensitive data.
+
+- The principle of least privilege states that a user should be given access to only the 
+  resources needed to perform their job. In this scenario, users have access to more than what
+  they need. The company should implement the principle of least privilege to secure their networks.
+
+- This is an example of mobile device management (MDM). MDM software is used by administrators to
+  secure mobile devices and to enforce enterprise policies on the devices. MDM software is often
+  used alongside a bring your own device(BYOD) policy and is typically deployed as a combination
+  of an on-device application or agent that communicates with a backend server. The application
+  receives policies and settings from the server to configure and control the mobile device.
+
+- Multi-factor authentication means that at least two categories of authentication methods
+  are utilized. Of these options, having the user input a PIN (something you know) and use an
+  authentication app (something you have) is the only example of multi-factor authentication.
+
+- A soft token is any digital authentication key that is used to authenticate a user. 
+  Of these options, only the authentication app is a soft token, since an authentication
+  app is a digital app on a phone or tablet.
+
+- Biometrics (fingerprint scanner) fall under the something you are authentication category.
+
+- A username and password falls under the something you know authentication category.
 <h2>14.5 Social Engineering Attacks</h2>
 <h3>14.5.1 Social Engineering</h3>
 <h3>14.5.2 Social Engineering Facts</h3>
@@ -137,6 +171,7 @@ The only answer that satisfies this requirement is a fingerprint (something you 
 <h3>14.5.5 Vulnerabilities</h3>
 <h3>14.5.6 Vulnerability Facts</h3>
 <h3>14.5.7 Quiz Facts</h3>
+
 
 <h2>14.6 Data Destruction and Disposal</h2>
 <h3>14.6.1 Data Disposal and Destruction</h3>
